@@ -1,53 +1,120 @@
 <template>
     <div>
-        <div id="nav">
-            <SearchBox />
-            <router-link to="/">Guide</router-link>
-            <router-link to="/component">Component</router-link>
-            <router-link to="/theme">Theme</router-link>
-            <router-link to="/resource">Resource</router-link>
-            <Dropdown />
+        <div id="NavBar">
+            <SearchBox v-if="currentPage.includes('component') ? true : false" />
+            <router-link
+                id="nav-link-guide"
+                @mouseenter.native="hoveringLink='guide'"
+                @mouseleave.native="hoveringLink='none'"
+                :class="[currentHoveringLinkIs('guide') ? 'nav-link-hovered' : 'nav-link']"
+                to="/"
+            >Guide</router-link>
+            <router-link
+                id="nav-link-component"
+                @mouseenter.native="hoveringLink='component'"
+                @mouseleave.native="hoveringLink='none'"
+                :class="[currentHoveringLinkIs('component') ? 'nav-link-hovered' : 'nav-link']"
+                to="/component"
+            >Component</router-link>
+            <router-link
+                @mouseenter.native="hoveringLink='theme'"
+                @mouseleave.native="hoveringLink='none'"
+                :class="[currentHoveringLinkIs('theme') ? 'nav-link-hovered' : 'nav-link']"
+                to="/theme"
+            >Theme</router-link>
+            <router-link
+                @mouseenter.native="hoveringLink='resource'"
+                @mouseleave.native="hoveringLink='none'"
+                :class="[currentHoveringLinkIs('resource') ? 'nav-link-hovered' : 'nav-link']"
+                to="/resource"
+            >Resource</router-link>
+            <Dropdown class="nav-dropdown nav-lang" />
         </div>
     </div>
 </template>
 
+
 <script>
 import SearchBox from "./SearchBox";
 import Dropdown from "./Dropdown";
+import { mapGetters } from "vuex";
 export default {
     name: "NavBar",
     components: {
         SearchBox,
-        Dropdown,
+        Dropdown
     },
+    data() {
+        return {
+            hoveringLink: "",
+            activeClass: "active"
+        };
+    },
+    methods: {
+        currentHoveringLinkIs(linkName) {
+            return this.hoveringLink === linkName;
+        }
+    },
+    computed: {
+        ...mapGetters(["getSearchBoxVisibility"]),
+        currentPage() {
+            // usage:
+            // :class="[currentPage.includes('theme') ? classNameA : classNameB]"
+            return this.$route.path;
+        }
+    }
 };
 </script>
 
 <style scoped>
-#nav {
-    /* padding: 30px; */
+#NavBar {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 5rem;
-    border: 1px #ccc solid;
+    height: 4rem;
+    border-bottom: 1px #ccc solid;
 }
 
-a {
-    text-decoration: none;
-}
-
-#nav a {
+#NavBar a {
     font-weight: bold;
     color: #2c3e50;
+    opacity: 0.5;
+    text-decoration: none;
+    height: 4rem;
+    display: flex;
+    align-items: center;
 }
 
-#nav a.router-link-exact-active {
-    color: #42b983;
+#NavBar a.nav-link-hovered {
+    color: #38ada9;
+    opacity: 1;
+    transition: ease-in-out;
 }
 
-@media (max-width: 500px) {
-    #nav {
+#NavBar a.router-link-exact-active {
+    color: #38ada9;
+    opacity: 1;
+    border-spacing: 10px;
+    border-bottom: 2px #38ada9 solid;
+    transition: ease-in-out;
+}
+
+@media (max-width: 375px) {
+    #NavBar {
+        display: grid;
+        grid-template-columns: 1fr;
+        height: fit-content;
+        border: none;
+    }
+
+    #NavBar a {
+        height: 2rem;
+    }
+
+    #NavBar a.router-link-exact-active {
+        color: #38ada9;
+        opacity: 1;
+        border: none;
     }
 }
 </style>
