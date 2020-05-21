@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Guide from "../views/Guide.vue";
-
+import Installation from "../views/Installation.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -20,6 +20,8 @@ const routes = [
             import(
                 /* webpackChunkName: "Component" */ "../views/Component.vue"
             ),
+
+        children: [{ path: "installation", component: Installation }],
     },
     {
         path: "/theme",

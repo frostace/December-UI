@@ -1,6 +1,12 @@
 <template>
     <div id="searchbox">
-        <input class="textInput" v-model="message" type="text" ref="search" placeholder="Search" />
+        <input
+            class="textInput"
+            v-model="message"
+            type="text"
+            ref="search"
+            placeholder="Search"
+        />
     </div>
 </template>
 
@@ -11,7 +17,7 @@ export default {
     name: "SearchBox",
     data() {
         return {
-            message: ""
+            message: "",
         };
     },
     methods: {
@@ -22,12 +28,12 @@ export default {
         },
         handleFocus() {
             // this.$refs.search.$el.focus();
-        }
+        },
     },
     updated() {
         // use debounce to stablize search result within 1 sec
         debounce(this.callMappedAction, 1000)();
-    }
+    },
     // mounted() {
     //     this.$nextTick(() => this.$refs.search.focus());
     // }
@@ -41,13 +47,19 @@ $green: #38ada9;
     text-align: left;
     border: none;
     outline: none;
-    border: solid 1px #ccc;
-    border-radius: 4px;
+    // border: solid 1px #ccc;
+    // border-radius: 4px;
 }
 
 #searchbox .textInput {
     height: 1.2rem;
     padding: 0 10px;
+    border: none;
+    outline: 0;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ccc;
+    border-radius: 4px;
     &:active,
     &:focus {
         border: none;

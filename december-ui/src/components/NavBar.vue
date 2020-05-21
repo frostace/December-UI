@@ -1,68 +1,83 @@
 <template>
     <div>
         <div id="NavBar">
-            <SearchBox v-if="currentPage.includes('component') ? true : false" />
             <router-link
                 id="nav-link-guide"
-                @mouseenter.native="hoveringLink='guide'"
-                @mouseleave.native="hoveringLink='none'"
-                :class="[currentHoveringLinkIs('guide') ? 'nav-link-hovered' : 'nav-link']"
+                @mouseenter.native="hoveringLink = 'guide'"
+                @mouseleave.native="hoveringLink = 'none'"
+                :class="[
+                    currentHoveringLinkIs('guide')
+                        ? 'nav-link-hovered'
+                        : 'nav-link',
+                ]"
                 to="/"
-            >Guide</router-link>
+                >Guide</router-link
+            >
             <router-link
                 id="nav-link-component"
-                @mouseenter.native="hoveringLink='component'"
-                @mouseleave.native="hoveringLink='none'"
-                :class="[currentHoveringLinkIs('component') ? 'nav-link-hovered' : 'nav-link']"
+                @mouseenter.native="hoveringLink = 'component'"
+                @mouseleave.native="hoveringLink = 'none'"
+                :class="[
+                    currentHoveringLinkIs('component')
+                        ? 'nav-link-hovered'
+                        : 'nav-link',
+                ]"
                 to="/component"
-            >Component</router-link>
+                >Component</router-link
+            >
             <router-link
-                @mouseenter.native="hoveringLink='theme'"
-                @mouseleave.native="hoveringLink='none'"
-                :class="[currentHoveringLinkIs('theme') ? 'nav-link-hovered' : 'nav-link']"
+                @mouseenter.native="hoveringLink = 'theme'"
+                @mouseleave.native="hoveringLink = 'none'"
+                :class="[
+                    currentHoveringLinkIs('theme')
+                        ? 'nav-link-hovered'
+                        : 'nav-link',
+                ]"
                 to="/theme"
-            >Theme</router-link>
+                >Theme</router-link
+            >
             <router-link
-                @mouseenter.native="hoveringLink='resource'"
-                @mouseleave.native="hoveringLink='none'"
-                :class="[currentHoveringLinkIs('resource') ? 'nav-link-hovered' : 'nav-link']"
+                @mouseenter.native="hoveringLink = 'resource'"
+                @mouseleave.native="hoveringLink = 'none'"
+                :class="[
+                    currentHoveringLinkIs('resource')
+                        ? 'nav-link-hovered'
+                        : 'nav-link',
+                ]"
                 to="/resource"
-            >Resource</router-link>
+                >Resource</router-link
+            >
             <Dropdown class="nav-dropdown nav-lang" />
         </div>
     </div>
 </template>
 
-
 <script>
-import SearchBox from "./SearchBox";
 import Dropdown from "./Dropdown";
-import { mapGetters } from "vuex";
+import {} from "vuex";
 export default {
     name: "NavBar",
     components: {
-        SearchBox,
-        Dropdown
+        Dropdown,
     },
     data() {
         return {
             hoveringLink: "",
-            activeClass: "active"
+            activeClass: "active",
         };
     },
     methods: {
         currentHoveringLinkIs(linkName) {
             return this.hoveringLink === linkName;
-        }
+        },
     },
     computed: {
-        ...mapGetters(["getSearchBoxVisibility"]),
         currentPage() {
             // usage:
             // :class="[currentPage.includes('theme') ? classNameA : classNameB]"
             return this.$route.path;
-        }
-    }
+        },
+    },
 };
 </script>
 

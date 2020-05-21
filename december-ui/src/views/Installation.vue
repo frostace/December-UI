@@ -1,5 +1,5 @@
 <template>
-    <div class="installation">
+    <div class="about">
         <h1>This is all about installation</h1>
         <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium

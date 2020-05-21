@@ -3,7 +3,9 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-const state = {};
+const state = {
+    activeRouterLink: "none",
+};
 
 const actions = {
     async passSearchText({ commit }, inputText) {

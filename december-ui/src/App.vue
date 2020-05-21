@@ -13,8 +13,8 @@ export default {
     name: "App",
     components: {
         NavBar,
-        LeftSidebar
-    }
+        LeftSidebar,
+    },
 };
 </script>
 
@@ -23,26 +23,36 @@ export default {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    margin: 0 10vw;
+    margin: 0 0 0 10vw;
+    height: 100vh;
     color: #2c3e50;
     display: grid;
-    grid-template-columns: minmax(300px, 1fr) repeat(3, fr);
-    grid-template-areas:
+    grid-template-columns: repeat(4, 1fr) calc(10vw - 1.5rem);
+    /* grid-template-areas:
         "navbar navbar navbar navbar"
-        "leftsidebar content content content";
-    grid-gap: 1rem;
+        "leftsidebar content content content"; */
+    grid-gap: 1.5rem;
 }
 
 .navbar {
-    grid-area: navbar;
+    /* grid-area: navbar; */
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 1;
 }
 
 .leftsidebar {
-    grid-area: leftsidebar;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
 }
 
 .content {
-    grid-area: content;
+    grid-column: 2 / span 4;
+    grid-row: 2 / span 1;
+}
+
+.about {
+    overflow: scroll;
+    scroll-padding-right: 30px;
+    padding: 0 10vw 0 0;
 }
 </style>
