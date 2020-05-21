@@ -13,8 +13,8 @@ export default {
     name: "App",
     components: {
         NavBar,
-        LeftSidebar,
-    },
+        LeftSidebar
+    }
 };
 </script>
 
@@ -24,8 +24,10 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
+    margin: 0 10vw;
     color: #2c3e50;
     display: grid;
+    grid-template-columns: minmax(300px, 1fr) repeat(3, fr);
     grid-template-areas:
         "navbar navbar navbar navbar"
         "leftsidebar content content content";
