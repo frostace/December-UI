@@ -2,7 +2,7 @@
     <div id="app">
         <NavBar class="navbar" />
         <LeftSidebar class="leftsidebar" />
-        <router-view class="content" />
+        <router-view v-bind:name="currentSubPage" class="content" />
     </div>
 </template>
 
@@ -15,10 +15,30 @@ export default {
         NavBar,
         LeftSidebar,
     },
+    computed: {
+        currentSubPage() {
+            // returning a string, e.g. "/theme" if the active router-link is theme
+            console.log(
+                this.$route.path.slice(this.$route.path.lastIndexOf("/") + 1)
+            );
+            return this.$route.path.slice(
+                this.$route.path.lastIndexOf("/") + 1
+            );
+        },
+        fakeProperty() {
+            return "quickstart";
+        },
+    },
+    updated() {
+        console.log(this.$route.path);
+    },
 };
 </script>
 
 <style>
+html {
+    overflow: hidden;
+}
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -28,6 +48,7 @@ export default {
     color: #2c3e50;
     display: grid;
     grid-template-columns: repeat(4, 1fr) calc(10vw - 1.5rem);
+    grid-template-rows: min-content auto;
     /* grid-template-areas:
         "navbar navbar navbar navbar"
         "leftsidebar content content content"; */

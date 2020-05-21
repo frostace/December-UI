@@ -10,9 +10,9 @@
                         ? 'nav-link-hovered'
                         : 'nav-link',
                 ]"
-                to="/"
-                >Guide</router-link
-            >
+                to="/guide"
+                >Guide
+            </router-link>
             <router-link
                 id="nav-link-component"
                 @mouseenter.native="hoveringLink = 'component'"
@@ -23,8 +23,8 @@
                         : 'nav-link',
                 ]"
                 to="/component"
-                >Component</router-link
-            >
+                >Component
+            </router-link>
             <router-link
                 @mouseenter.native="hoveringLink = 'theme'"
                 @mouseleave.native="hoveringLink = 'none'"
@@ -34,8 +34,8 @@
                         : 'nav-link',
                 ]"
                 to="/theme"
-                >Theme</router-link
-            >
+                >Theme
+            </router-link>
             <router-link
                 @mouseenter.native="hoveringLink = 'resource'"
                 @mouseleave.native="hoveringLink = 'none'"
@@ -45,8 +45,8 @@
                         : 'nav-link',
                 ]"
                 to="/resource"
-                >Resource</router-link
-            >
+                >Resource
+            </router-link>
             <Dropdown class="nav-dropdown nav-lang" />
         </div>
     </div>
@@ -81,7 +81,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+$green: #38ada9;
+
 #NavBar {
     display: flex;
     justify-content: space-around;
@@ -101,7 +103,7 @@ export default {
 }
 
 #NavBar a.nav-link-hovered {
-    color: #38ada9;
+    color: $green;
     opacity: 1;
     -webkit-transition: all 0.1s ease-in-out;
     -moz-transition: all 0.1s ease-in-out;
@@ -110,10 +112,10 @@ export default {
 }
 
 #NavBar a.router-link-exact-active {
-    color: #38ada9;
+    color: $green;
     opacity: 1;
     border-spacing: 10px;
-    border-bottom: 2px #38ada9 solid;
+    border-bottom: 2px $green solid;
     -webkit-transition: all 0.1s ease-in-out;
     -moz-transition: all 0.1s ease-in-out;
     -ms-transition: all 0.1s ease-in-out;
@@ -133,7 +135,7 @@ export default {
     }
 
     #NavBar a.router-link-exact-active {
-        color: #38ada9;
+        color: $green;
         opacity: 1;
         border: none;
     }
