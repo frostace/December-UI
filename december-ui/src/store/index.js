@@ -14,6 +14,7 @@ const actions = {
 };
 
 const getters = {
+    getActiveRouterLink: (state) => state.activeRouterLink,
     languages: () => ["English", "中文", "Español", "Français"],
 };
 

@@ -18,9 +18,7 @@ export default {
     computed: {
         currentSubPage() {
             // returning a string, e.g. "/theme" if the active router-link is theme
-            console.log(
-                this.$route.path.slice(this.$route.path.lastIndexOf("/") + 1)
-            );
+
             return this.$route.path.slice(
                 this.$route.path.lastIndexOf("/") + 1
             );
@@ -29,13 +27,13 @@ export default {
             return "quickstart";
         },
     },
-    updated() {
-        console.log(this.$route.path);
-    },
+    updated() {},
 };
 </script>
 
-<style>
+<style lang="scss">
+$black: #2c3e50;
+
 html {
     overflow: hidden;
 }
@@ -45,7 +43,7 @@ html {
     -moz-osx-font-smoothing: grayscale;
     margin: 0 0 0 10vw;
     height: 100vh;
-    color: #2c3e50;
+    color: $black;
     display: grid;
     grid-template-columns: repeat(4, 1fr) calc(10vw - 1.5rem);
     grid-template-rows: min-content auto;

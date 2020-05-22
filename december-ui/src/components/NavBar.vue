@@ -90,38 +90,34 @@ $green: #38ada9;
     align-items: center;
     height: 4rem;
     border-bottom: 1px #ccc solid;
+    a {
+        font-weight: bold;
+        color: #2c3e50;
+        opacity: 0.5;
+        text-decoration: none;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -ms-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+    }
+
+    a.nav-link-hovered {
+        color: $green;
+        opacity: 1;
+    }
+
+    a.router-link-exact-active {
+        color: $green;
+        opacity: 1;
+        border-spacing: 10px;
+        border-bottom: 2px $green solid;
+    }
 }
 
-#NavBar a {
-    font-weight: bold;
-    color: #2c3e50;
-    opacity: 0.5;
-    text-decoration: none;
-    height: 4rem;
-    display: flex;
-    align-items: center;
-}
-
-#NavBar a.nav-link-hovered {
-    color: $green;
-    opacity: 1;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-}
-
-#NavBar a.router-link-exact-active {
-    color: $green;
-    opacity: 1;
-    border-spacing: 10px;
-    border-bottom: 2px $green solid;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -ms-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-}
-
+// responsive design
 @media (max-width: 375px) {
     #NavBar {
         display: grid;

@@ -42,7 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 $green: #38ada9;
-
+$borderWidth: 1px;
 #searchbox {
     text-align: left;
     border: none;
@@ -56,7 +56,7 @@ $green: #38ada9;
     padding: 0 10px;
     border: none;
     outline: 0;
-    border-width: 2px;
+    border-width: $borderWidth;
     border-style: solid;
     border-color: #ccc;
     border-radius: 4px;
@@ -64,7 +64,7 @@ $green: #38ada9;
     &:focus {
         border: none;
         outline: 0;
-        border-width: 2px;
+        border-width: $borderWidth;
         border-style: solid;
         border-color: lighten($green, 5%);
         border-radius: 4px;
