@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["Theme"],{de93:function(e,t,n){"use strict";n.r(t);var s=function(){var e=this,t=e.$createElement;e._self._c;return e._m(0)},a=[function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"about"},[n("h1",[e._v("This is a Theme page")])])}],c=n("2877"),i={},l=Object(c["a"])(i,s,a,!1,null,null,null);t["default"]=l.exports}}]);
+//# sourceMappingURL=Theme.b52763b2.js.map
