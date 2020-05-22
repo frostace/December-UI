@@ -1,6 +1,7 @@
 <template>
     <div>
         <div id="NavBar">
+            <!-- TODO: refactor with v-for -->
             <router-link
                 id="nav-link-guide"
                 @mouseenter.native="hoveringLink = 'guide'"
@@ -8,6 +9,8 @@
                 :class="[
                     currentHoveringLinkIs('guide')
                         ? 'nav-link-hovered'
+                        : currentMainPage.includes('guide')
+                        ? 'router-link-exact-active'
                         : 'nav-link',
                 ]"
                 to="/guide"
@@ -20,6 +23,8 @@
                 :class="[
                     currentHoveringLinkIs('component')
                         ? 'nav-link-hovered'
+                        : currentMainPage.includes('component')
+                        ? 'router-link-exact-active'
                         : 'nav-link',
                 ]"
                 to="/component"
@@ -31,6 +36,8 @@
                 :class="[
                     currentHoveringLinkIs('theme')
                         ? 'nav-link-hovered'
+                        : currentMainPage.includes('theme')
+                        ? 'router-link-exact-active'
                         : 'nav-link',
                 ]"
                 to="/theme"
@@ -42,6 +49,8 @@
                 :class="[
                     currentHoveringLinkIs('resource')
                         ? 'nav-link-hovered'
+                        : currentMainPage.includes('resource')
+                        ? 'router-link-exact-active'
                         : 'nav-link',
                 ]"
                 to="/resource"
@@ -72,10 +81,19 @@ export default {
         },
     },
     computed: {
+        currentMainPage() {
+            // usage:
+            // :class="[currentPage.includes('theme') ? classNameA : classNameB]"
+            var routerPath = this.$route.path;
+            return routerPath.lastIndexOf("/") === 0
+                ? routerPath.slice(1)
+                : routerPath.slice(1, routerPath.lastIndexOf("/"));
+        },
         currentPage() {
             // usage:
             // :class="[currentPage.includes('theme') ? classNameA : classNameB]"
-            return this.$route.path;
+            var routerPath = this.$route.path;
+            return routerPath;
         },
     },
 };

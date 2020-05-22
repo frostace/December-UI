@@ -1,13 +1,44 @@
 <template>
     <div id="sidebar">
+        <!-- Guide Items -->
+        <div
+            class="guideSidebar"
+            v-if="currentPage.includes('guide') ? true : false"
+        >
+            <div
+                v-bind:key="index"
+                v-for="(guideSection, index) in $t('guideSections')"
+                class="section"
+            >
+                <a class="section-name">{{ guideSection.sectionName }}</a>
+                <div
+                    v-if="guideSection.subTitle === '' ? false : true"
+                    class="sub-title"
+                >
+                    {{ guideSection.subTitle }}
+                </div>
+                <ul class="pure-menu-list">
+                    <li
+                        v-bind:key="sectionItem.itemName"
+                        v-for="sectionItem in guideSection.sectionItems"
+                        class="nav-item"
+                    >
+                        <router-link v-bind:to="sectionItem.itemPath"
+                            >{{ sectionItem.itemName }}
+                        </router-link>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Component Items -->
         <SearchBox v-if="currentPage.includes('component') ? true : false" />
         <div
             class="componentSidebar"
             v-if="currentPage.includes('component') ? true : false"
         >
             <div
-                v-bind:key="componentSection.sectionName"
-                v-for="componentSection in componentSections"
+                v-bind:key="index"
+                v-for="(componentSection, index) in $t('componentSections')"
                 class="section"
             >
                 <a class="section-name">{{ componentSection.sectionName }}</a>
@@ -30,6 +61,10 @@
                 </ul>
             </div>
         </div>
+
+        <!-- Theme Items -->
+
+        <!-- Resource Items -->
     </div>
 </template>
 
@@ -40,86 +75,15 @@ export default {
     name: "sidebar",
     components: { SearchBox },
     data() {
-        return {
-            componentSections: [
-                {
-                    sectionName: "Development",
-                    subTitle: "",
-                    sectionItems: [
-                        {
-                            itemName: "Installation",
-                            itemPath: "/component/installation",
-                        },
-                        {
-                            itemName: "Quick Start",
-                            itemPath: "/component/quickstart",
-                        },
-                        {
-                            itemName: "Internationalization",
-                            itemPath: "/component/i18n",
-                        },
-                        {
-                            itemName: "Custom Theme",
-                            itemPath: "/component/customtheme",
-                        },
-                        {
-                            itemName: "Built-in transition",
-                            itemPath: "builtintransition",
-                        },
-                    ],
-                },
-                {
-                    sectionName: "Components",
-                    subTitle: "Basic",
-                    sectionItems: [
-                        {
-                            itemName: "Layout",
-                            itemPath: "/component/layout",
-                        },
-                        {
-                            itemName: "Layout Container",
-                            itemPath: "/component/layoutcontainer",
-                        },
-                        {
-                            itemName: "Color",
-                            itemPath: "/component/color",
-                        },
-                        {
-                            itemName: "Typography",
-                            itemPath: "/component/typography",
-                        },
-                        {
-                            itemName: "Border",
-                            itemPath: "/component/border",
-                        },
-                        {
-                            itemName: "Icon",
-                            itemPath: "/component/icon",
-                        },
-                        {
-                            itemName: "Button",
-                            itemPath: "/component/button",
-                        },
-                        {
-                            itemName: "Link",
-                            itemPath: "/component/link",
-                        },
-                    ],
-                },
-                // {
-                //     sectionName: "",
-                //     sectionItems: [],
-                // },
-                // {
-                //     sectionName: "",
-                //     sectionItems: [],
-                // },
-                // {
-                //     sectionName: "",
-                //     sectionItems: [],
-                // },
-            ],
-        };
+        return {};
+    },
+    methods: {
+        setLang(evt) {
+            // check which element triggered the event, lang info saved in data-lang directive
+            const lang = evt.target.dataset.lang;
+            localStorage.setItem("language", lang);
+            return history.go(0);
+        },
     },
     computed: {
         currentPage() {

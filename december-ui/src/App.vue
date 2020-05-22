@@ -1,8 +1,17 @@
 <template>
     <div id="app">
-        <NavBar class="navbar" />
-        <LeftSidebar class="leftsidebar" />
-        <router-view v-bind:name="currentSubPage" class="content" />
+        <NavBar ref="navbar" class="navbar" />
+        <LeftSidebar
+            v-if="
+                currentPage.includes('guide') ||
+                    currentPage.includes('component')
+            "
+            class="leftsidebar"
+        />
+        <router-view
+            v-bind:class="getRouterViewClass"
+            v-bind:name="currentSubPage"
+        />
     </div>
 </template>
 
@@ -16,15 +25,25 @@ export default {
         LeftSidebar,
     },
     computed: {
-        currentSubPage() {
-            // returning a string, e.g. "/theme" if the active router-link is theme
-
-            return this.$route.path.slice(
-                this.$route.path.lastIndexOf("/") + 1
-            );
+        getRouterViewClass() {
+            if (
+                this.currentPage.includes("guide") ||
+                this.currentPage.includes("component")
+            ) {
+                return "subcontent";
+            }
+            return "fullcontent";
         },
-        fakeProperty() {
-            return "quickstart";
+        currentPage() {
+            // returning a string, e.g. "/theme" if the active router-link is theme
+            var routerPath = this.$route.path;
+            return routerPath;
+        },
+        currentSubPage() {
+            var routerPath = this.$route.path;
+            return routerPath.includes("component")
+                ? routerPath.slice(routerPath.lastIndexOf("/") + 1)
+                : undefined;
         },
     },
     updated() {},
@@ -64,8 +83,13 @@ html {
     grid-row: 2 / span 1;
 }
 
-.content {
+.subcontent {
     grid-column: 2 / span 4;
+    grid-row: 2 / span 1;
+}
+
+.fullcontent {
+    grid-column: 1 / span 5;
     grid-row: 2 / span 1;
 }
 

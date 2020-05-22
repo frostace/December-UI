@@ -7,11 +7,11 @@
             <!-- and renders a div containing the `option`s value. -->
             <div
                 class="option"
-                v-bind:key="language"
-                v-for="language in languages"
-                @click="set(language)"
+                v-bind:key="index"
+                v-for="(language, index) in availableLanguages"
+                @click="set(language.full, language.abbr)"
             >
-                {{ language }}
+                {{ language.full }}
             </div>
         </div>
 
@@ -20,10 +20,10 @@
     </div>
 </template>
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
     name: "dropdown",
-    computed: mapGetters(["languages"]),
+    computed: mapGetters(["availableLanguages", "getCurrLanguage"]),
     data() {
         return {
             selected: "English",
@@ -33,6 +33,7 @@ export default {
         };
     },
     methods: {
+        ...mapActions(["selectCurrLanguage"]),
         toggle: function() {
             this.isOpen = !this.isOpen;
         },
@@ -43,14 +44,18 @@ export default {
             this.isOpen = false;
         },
         // Set option as selected state and close dropdown.
-        set: function(option) {
-            console.log(option);
-            this.selected = option;
+        set: function(langFull, langAbbr) {
+            console.log(langFull, langAbbr);
+
+            this.selectCurrLanguage(langAbbr);
+            this.$i18n.locale = langAbbr;
+            // localStorage.setItem("language", langAbbr);
+            this.selected = langFull;
             this.hide();
         },
     },
     mounted: function() {
-        console.log("My dropdown component is mounted!");
+        // console.log("My dropdown component is mounted!");
     },
 };
 </script>

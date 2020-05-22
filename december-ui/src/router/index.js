@@ -6,22 +6,16 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: "/",
-        name: "Welcome",
+        name: "welcome",
         component: Welcome,
     },
     {
         path: "/guide",
-        name: "Guide",
+        redirect: "/guide/installation",
+        name: "guide",
         // route level code-splitting
         // this generates a separate chunk (Component.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () =>
-            import(/* webpackChunkName: "Guide" */ "../views/Guide.vue"),
-    },
-    {
-        path: "/component",
-        redirect: "/component/installation",
-        name: "Component",
         components: {
             default: () =>
                 import(
@@ -50,7 +44,7 @@ const routes = [
         },
         children: [
             {
-                path: "/component/installation",
+                path: "/guide/installation",
                 name: "installation",
                 component: () =>
                     import(
@@ -58,34 +52,40 @@ const routes = [
                     ),
             },
             {
-                path: "/component/quickstart",
+                path: "/guide/quickstart",
                 name: "quickstart",
                 component: import(
                     /* webpackChunkName: "QuickStart" */ "../views/QuickStart.vue"
                 ),
             },
             {
-                path: "/component/i18n",
+                path: "/guide/i18n",
                 name: "i18n",
                 component: import(
                     /* webpackChunkName: "Internationalization" */ "../views/Internationalization.vue"
                 ),
             },
             {
-                path: "/component/customtheme",
+                path: "/guide/customtheme",
                 name: "customtheme",
                 component: import(
                     /* webpackChunkName: "CustomTheme" */ "../views/CustomTheme.vue"
                 ),
             },
             {
-                path: "/component/builtintransition",
+                path: "/guide/builtintransition",
                 name: "builtintransition",
                 component: import(
                     /* webpackChunkName: "BuiltinTransition" */ "../views/BuiltinTransition.vue"
                 ),
             },
         ],
+    },
+    {
+        path: "/component",
+        name: "component",
+        component: () =>
+            import(/* webpackChunkName: "Theme" */ "../views/Component.vue"),
     },
     {
         path: "/theme",

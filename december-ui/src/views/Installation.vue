@@ -4,7 +4,9 @@
         <h3 id="npm">npm</h3>
         <p>
             Installing with npm is recommended and it works seamlessly with
-            <a href="https://webpack.js.org/">webpack</a>.
+            <a
+                href="https://webpack.js.org/"
+            >webpack</a>.
         </p>
         <div class="codeblock" v-highlight>
             <pre>
@@ -14,9 +16,9 @@
         <h3 id="CDN">CDN</h3>
         <p>
             Get the latest version from
-            <a href="https://unpkg.com/browse/element-ui@2.13.2/"
-                >unpkg.com/element-ui</a
-            >, and import JavaScript and CSS file in your page.
+            <a
+                href="https://unpkg.com/browse/element-ui@2.13.2/"
+            >unpkg.com/element-ui</a>, and import JavaScript and CSS file in your page.
         </p>
         <div class="codeblock" v-highlight>
             <pre>
@@ -103,7 +105,7 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-$blue: #40a9ff;
+$green: #38ada9;
 
 p {
     font-size: 14px;
@@ -120,7 +122,7 @@ p {
 
 a {
     text-decoration: none;
-    color: $blue;
+    color: $green;
 }
 
 pre {
