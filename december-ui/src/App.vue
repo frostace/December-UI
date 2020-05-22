@@ -25,6 +25,7 @@ export default {
         LeftSidebar,
     },
     computed: {
+        // used to dynamically assign class to router-view so that it's not full in guide and component
         getRouterViewClass() {
             if (
                 this.currentPage.includes("guide") ||
@@ -94,7 +95,7 @@ html {
 }
 
 .about {
-    overflow: scroll;
+    overflow: auto;
     scroll-padding-right: 30px;
     padding: 0 10vw 0 0;
 }

@@ -1,5 +1,5 @@
 <template>
     <div class="about">
-        <h1>This is a Guide page</h1>
+        <router-view></router-view>
     </div>
 </template>

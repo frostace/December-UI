@@ -1,6 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Welcome from "../views/Welcome.vue";
+import Guide from "../views/Guide.vue";
+import Installation from "../views/Installation";
+import QuickStart from "../views/QuickStart";
+import Internationalization from "../views/Internationalization";
+import CustomTheme from "../views/CustomTheme";
+import BuiltinTransition from "../views/BuiltinTransition";
 Vue.use(VueRouter);
 
 const routes = [
@@ -13,77 +19,42 @@ const routes = [
         path: "/guide",
         redirect: "/guide/installation",
         name: "guide",
-        // route level code-splitting
-        // this generates a separate chunk (Component.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        components: {
-            default: () =>
-                import(
-                    /* webpackChunkName: "Component/Installation" */ "../views/Installation.vue"
-                ),
-            installation: () =>
-                import(
-                    /* webpackChunkName: "Component/Installation" */ "../views/Installation.vue"
-                ),
-            quickstart: () =>
-                import(
-                    /* webpackChunkName: "Component/QuickStart" */ "../views/QuickStart.vue"
-                ),
-            i18n: () =>
-                import(
-                    /* webpackChunkName: "Component/Internationalization" */ "../views/Internationalization.vue"
-                ),
-            customtheme: () =>
-                import(
-                    /* webpackChunkName: "Component/CustomTheme" */ "../views/CustomTheme.vue"
-                ),
-            builtintransition: () =>
-                import(
-                    /* webpackChunkName: "Component/BuiltinTransition" */ "../views/BuiltinTransition.vue"
-                ),
-        },
+        component: Guide,
+
         children: [
             {
-                path: "/guide/installation",
+                path: "installation",
                 name: "installation",
-                component: () =>
-                    import(
-                        /* webpackChunkName: "Installation" */ "../views/Installation.vue"
-                    ),
+                component: Installation,
             },
             {
-                path: "/guide/quickstart",
-                name: "quickstart",
-                component: import(
-                    /* webpackChunkName: "QuickStart" */ "../views/QuickStart.vue"
-                ),
+                path: "quickstart",
+                name: "guide.quickstart",
+                component: QuickStart,
             },
             {
-                path: "/guide/i18n",
+                path: "i18n",
                 name: "i18n",
-                component: import(
-                    /* webpackChunkName: "Internationalization" */ "../views/Internationalization.vue"
-                ),
+                component: Internationalization,
             },
             {
-                path: "/guide/customtheme",
+                path: "customtheme",
                 name: "customtheme",
-                component: import(
-                    /* webpackChunkName: "CustomTheme" */ "../views/CustomTheme.vue"
-                ),
+                component: CustomTheme,
             },
             {
-                path: "/guide/builtintransition",
+                path: "builtintransition",
                 name: "builtintransition",
-                component: import(
-                    /* webpackChunkName: "BuiltinTransition" */ "../views/BuiltinTransition.vue"
-                ),
+                component: BuiltinTransition,
             },
         ],
     },
     {
         path: "/component",
         name: "component",
+        // route level code-splitting
+        // this generates a separate chunk (Component.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
         component: () =>
             import(/* webpackChunkName: "Theme" */ "../views/Component.vue"),
     },

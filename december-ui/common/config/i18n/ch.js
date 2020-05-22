@@ -1,5 +1,11 @@
 // ch.js
 export const locale = {
+    navbarItems: [
+        { alias: "guide", name: "指南" },
+        { alias: "component", name: "组件" },
+        { alias: "theme", name: "主题" },
+        { alias: "resource", name: "资源" },
+    ],
     guideSections: [
         {
             sectionName: "开发指南",

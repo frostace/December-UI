@@ -1,61 +1,25 @@
 <template>
     <div>
         <div id="NavBar">
-            <!-- TODO: refactor with v-for -->
             <router-link
-                id="nav-link-guide"
-                @mouseenter.native="hoveringLink = 'guide'"
+                :id="'nav-link-' + navItem.alias"
+                v-bind:key="index"
+                v-for="(navItem, index) in $t('navbarItems')"
+                @mouseenter.native="hoveringLink = navItem.alias"
                 @mouseleave.native="hoveringLink = 'none'"
                 :class="[
-                    currentHoveringLinkIs('guide')
+                    currentHoveringLinkIs(navItem.alias)
                         ? 'nav-link-hovered'
-                        : currentMainPage.includes('guide')
+                        : currentMainPage.includes(navItem.alias)
                         ? 'router-link-exact-active'
                         : 'nav-link',
                 ]"
-                to="/guide"
-                >Guide
+                :to="'/' + navItem.alias"
+                >{{
+                    navItem.name.charAt(0).toUpperCase() + navItem.name.slice(1)
+                }}
             </router-link>
-            <router-link
-                id="nav-link-component"
-                @mouseenter.native="hoveringLink = 'component'"
-                @mouseleave.native="hoveringLink = 'none'"
-                :class="[
-                    currentHoveringLinkIs('component')
-                        ? 'nav-link-hovered'
-                        : currentMainPage.includes('component')
-                        ? 'router-link-exact-active'
-                        : 'nav-link',
-                ]"
-                to="/component"
-                >Component
-            </router-link>
-            <router-link
-                @mouseenter.native="hoveringLink = 'theme'"
-                @mouseleave.native="hoveringLink = 'none'"
-                :class="[
-                    currentHoveringLinkIs('theme')
-                        ? 'nav-link-hovered'
-                        : currentMainPage.includes('theme')
-                        ? 'router-link-exact-active'
-                        : 'nav-link',
-                ]"
-                to="/theme"
-                >Theme
-            </router-link>
-            <router-link
-                @mouseenter.native="hoveringLink = 'resource'"
-                @mouseleave.native="hoveringLink = 'none'"
-                :class="[
-                    currentHoveringLinkIs('resource')
-                        ? 'nav-link-hovered'
-                        : currentMainPage.includes('resource')
-                        ? 'router-link-exact-active'
-                        : 'nav-link',
-                ]"
-                to="/resource"
-                >Resource
-            </router-link>
+
             <Dropdown class="nav-dropdown nav-lang" />
         </div>
     </div>

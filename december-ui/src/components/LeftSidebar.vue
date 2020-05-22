@@ -1,5 +1,6 @@
 <template>
     <div id="sidebar">
+        <!-- TODO: refactor it with v-for -->
         <!-- Guide Items -->
         <div
             class="guideSidebar"
@@ -10,7 +11,9 @@
                 v-for="(guideSection, index) in $t('guideSections')"
                 class="section"
             >
-                <a class="section-name">{{ guideSection.sectionName }}</a>
+                <a v-if="guideSection.sectionName !== ''" class="section-name"
+                    >{{ guideSection.sectionName }}
+                </a>
                 <div
                     v-if="guideSection.subTitle === '' ? false : true"
                     class="sub-title"
@@ -41,7 +44,11 @@
                 v-for="(componentSection, index) in $t('componentSections')"
                 class="section"
             >
-                <a class="section-name">{{ componentSection.sectionName }}</a>
+                <a
+                    v-if="componentSection.sectionName !== ''"
+                    class="section-name"
+                    >{{ componentSection.sectionName }}</a
+                >
                 <div
                     v-if="componentSection.subTitle === '' ? false : true"
                     class="sub-title"
@@ -89,6 +96,7 @@ export default {
         currentPage() {
             // usage:
             // :class="[currentPage.includes('theme') ? classNameA : classNameB]"
+            console.log(this.$route.path);
             return this.$route.path;
         },
     },
@@ -101,7 +109,7 @@ $green: #38ada9;
 #sidebar {
     width: 10rem;
     display: flex;
-    overflow: scroll;
+    overflow: auto;
     flex-direction: column;
     align-items: left;
     a.section-name {
