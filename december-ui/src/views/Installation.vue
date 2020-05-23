@@ -8,7 +8,7 @@
                 href="https://webpack.js.org/"
             >webpack</a>.
         </p>
-        <div class="codeblock" v-highlight>
+        <div class="code-container" v-highlight>
             <pre>
             <code class="shell">npm install december-ui -S</code>
             </pre>
@@ -20,7 +20,7 @@
                 href="https://unpkg.com/browse/element-ui@2.13.2/"
             >unpkg.com/element-ui</a>, and import JavaScript and CSS file in your page.
         </p>
-        <div class="codeblock" v-highlight>
+        <div class="code-container" v-highlight>
             <pre>
             <code class="html"><!-- import CSS -->balabala</code>
             </pre>
@@ -30,68 +30,22 @@
             cupiditate vero delectus aliquid molestiae, at iusto quidem rerum
             nulla, eos repellendus nemo repudiandae cum consequuntur vitae nam,
             nesciunt voluptate.
-        </p>
-        <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut animi
             cupiditate vero delectus aliquid molestiae, at iusto quidem rerum
             nulla, eos repellendus nemo repudiandae cum consequuntur vitae nam,
             nesciunt voluptate.
-        </p>
-        <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut animi
             cupiditate vero delectus aliquid molestiae, at iusto quidem rerum
             nulla, eos repellendus nemo repudiandae cum consequuntur vitae nam,
             nesciunt voluptate.
-        </p>
-        <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut animi
             cupiditate vero delectus aliquid molestiae, at iusto quidem rerum
             nulla, eos repellendus nemo repudiandae cum consequuntur vitae nam,
             nesciunt voluptate.
-        </p>
-        <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut animi
             cupiditate vero delectus aliquid molestiae, at iusto quidem rerum
             nulla, eos repellendus nemo repudiandae cum consequuntur vitae nam,
             nesciunt voluptate.
-        </p>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut animi
-            cupiditate vero delectus aliquid molestiae, at iusto quidem rerum
-            nulla, eos repellendus nemo repudiandae cum consequuntur vitae nam,
-            nesciunt voluptate.
-        </p>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut animi
-            cupiditate vero delectus aliquid molestiae, at iusto quidem rerum
-            nulla, eos repellendus nemo repudiandae cum consequuntur vitae nam,
-            nesciunt voluptate.
-        </p>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut animi
-            cupiditate vero delectus aliquid molestiae, at iusto quidem rerum
-            nulla, eos repellendus nemo repudiandae cum consequuntur vitae nam,
-            nesciunt voluptate.
-        </p>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut animi
-            cupiditate vero delectus aliquid molestiae, at iusto quidem rerum
-            nulla, eos repellendus nemo repudiandae cum consequuntur vitae nam,
-            nesciunt voluptate.
-        </p>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut animi
-            cupiditate vero delectus aliquid molestiae, at iusto quidem rerum
-            nulla, eos repellendus nemo repudiandae cum consequuntur vitae nam,
-            nesciunt voluptate.
-        </p>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut animi
-            cupiditate vero delectus aliquid molestiae, at iusto quidem rerum
-            nulla, eos repellendus nemo repudiandae cum consequuntur vitae nam,
-            nesciunt voluptate.
-        </p>
-        <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut animi
             cupiditate vero delectus aliquid molestiae, at iusto quidem rerum
             nulla, eos repellendus nemo repudiandae cum consequuntur vitae nam,
@@ -105,32 +59,48 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-$green: #38ada9;
+// define params
+$content-font-size: 14px;
+$key-color: #38ada9;
+$font-color: #2c3e50;
 
-p {
-    font-size: 14px;
+// define placeholders
+%content-style {
+    font-size: $content-font-size;
+    color: $font-color;
 }
-.hljs {
+
+%code-block-style {
     color: white;
     border-radius: 4px;
     padding: 15px;
 }
 
+.h2,
+h3 {
+    color: $font-color;
+}
 .h3 {
     margin: 55px 0 20px 0;
 }
 
+p {
+    @extend %content-style;
+}
+
 a {
     text-decoration: none;
-    color: $green;
+    color: $key-color;
 }
 
-pre {
-    margin: 13px 0;
-    padding: 0;
-}
-
-.codeblock {
+.code-container {
     height: fit-content;
+    pre {
+        margin: 13px 0;
+        padding: 0;
+    }
+    .hljs {
+        @extend %code-block-style;
+    }
 }
 </style>

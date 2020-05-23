@@ -8,10 +8,7 @@
             "
             class="leftsidebar"
         />
-        <router-view
-            v-bind:class="getRouterViewClass"
-            v-bind:name="currentSubPage"
-        />
+        <router-view v-bind:class="getRouterViewClass" v-bind:name="currentSubPage" />
     </div>
 </template>
 
@@ -22,7 +19,7 @@ export default {
     name: "App",
     components: {
         NavBar,
-        LeftSidebar,
+        LeftSidebar
     },
     computed: {
         // used to dynamically assign class to router-view so that it's not full in guide and component
@@ -45,14 +42,16 @@ export default {
             return routerPath.includes("component")
                 ? routerPath.slice(routerPath.lastIndexOf("/") + 1)
                 : undefined;
-        },
+        }
     },
-    updated() {},
+    updated() {}
 };
 </script>
 
 <style lang="scss">
-$black: #2c3e50;
+$content-font-size: 14px;
+$key-color: #38ada9;
+$font-color: #2c3e50;
 
 html {
     overflow: hidden;
@@ -63,13 +62,10 @@ html {
     -moz-osx-font-smoothing: grayscale;
     margin: 0 0 0 10vw;
     height: 100vh;
-    color: $black;
+    color: $font-color;
     display: grid;
     grid-template-columns: repeat(4, 1fr) calc(10vw - 1.5rem);
     grid-template-rows: min-content auto;
-    /* grid-template-areas:
-        "navbar navbar navbar navbar"
-        "leftsidebar content content content"; */
     grid-gap: 1.5rem;
 }
 

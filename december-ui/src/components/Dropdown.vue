@@ -10,9 +10,7 @@
                 v-bind:key="index"
                 v-for="(language, index) in availableLanguages"
                 @click="set(language.full, language.abbr)"
-            >
-                {{ language.full }}
-            </div>
+            >{{ language.full }}</div>
         </div>
 
         <!-- TODO: can be modified so that it's under ::after property -->
@@ -28,7 +26,7 @@ export default {
         return {
             selected: "English",
             // Whether the options are visible or not.
-            isOpen: false,
+            isOpen: false
             // The selected value.
         };
     },
@@ -52,17 +50,17 @@ export default {
             // localStorage.setItem("language", langAbbr);
             this.selected = langFull;
             this.hide();
-        },
+        }
     },
     mounted: function() {
         // console.log("My dropdown component is mounted!");
-    },
+    }
 };
 </script>
 
 <style lang="scss" scoped>
-$green: #38ada9;
-$black: #2c3e50;
+$key-color: #38ada9;
+$font-color: #2c3e50;
 
 #dropdown {
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -79,10 +77,6 @@ $black: #2c3e50;
         margin-right: 5px;
     }
 
-    // .selected:before {
-    //     content: <i class= "far fa-language" ></i>;
-    // }
-
     .options {
         position: absolute;
         left: calc(0% - 7.5px);
@@ -96,10 +90,10 @@ $black: #2c3e50;
         box-shadow: 1px 1px #ccc;
         .option {
             padding: 5px 15px;
-        }
-        .option:hover {
-            color: $green;
-            background-color: lighten($green, 50%);
+            &:hover {
+                color: $key-color;
+                background-color: lighten($key-color, 50%);
+            }
         }
     }
     font-awesome-icon {
@@ -107,16 +101,6 @@ $black: #2c3e50;
         font-size: 1px;
     }
 }
-
-// .dropdown-content {
-//     display: none;
-//     position: absolute;
-//     background-color: #f9f9f9;
-//     min-width: 160px;
-//     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-//     padding: 12px 16px;
-//     z-index: 1;
-// }
 
 * {
     font-weight: bold;

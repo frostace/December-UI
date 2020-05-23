@@ -2,43 +2,34 @@
     <div id="sidebar">
         <!-- TODO: refactor it with v-for -->
         <!-- Guide Items -->
-        <div
-            class="guideSidebar"
-            v-if="currentPage.includes('guide') ? true : false"
-        >
+        <div class="guideSidebar" v-if="currentPage.includes('guide') ? true : false">
             <div
                 v-bind:key="index"
                 v-for="(guideSection, index) in $t('guideSections')"
                 class="section"
             >
-                <a v-if="guideSection.sectionName !== ''" class="section-name"
-                    >{{ guideSection.sectionName }}
-                </a>
+                <a
+                    v-if="guideSection.sectionName !== ''"
+                    class="section-name"
+                >{{ guideSection.sectionName }}</a>
                 <div
                     v-if="guideSection.subTitle === '' ? false : true"
                     class="sub-title"
-                >
-                    {{ guideSection.subTitle }}
-                </div>
+                >{{ guideSection.subTitle }}</div>
                 <ul class="pure-menu-list">
                     <li
                         v-bind:key="sectionItem.itemName"
                         v-for="sectionItem in guideSection.sectionItems"
                         class="nav-item"
                     >
-                        <router-link v-bind:to="sectionItem.itemPath"
-                            >{{ sectionItem.itemName }}
-                        </router-link>
+                        <router-link v-bind:to="sectionItem.itemPath">{{ sectionItem.itemName }}</router-link>
                     </li>
                 </ul>
             </div>
         </div>
         <!-- Component Items -->
         <SearchBox v-if="currentPage.includes('component') ? true : false" />
-        <div
-            class="componentSidebar"
-            v-if="currentPage.includes('component') ? true : false"
-        >
+        <div class="componentSidebar" v-if="currentPage.includes('component') ? true : false">
             <div
                 v-bind:key="index"
                 v-for="(componentSection, index) in $t('componentSections')"
@@ -47,23 +38,18 @@
                 <a
                     v-if="componentSection.sectionName !== ''"
                     class="section-name"
-                    >{{ componentSection.sectionName }}</a
-                >
+                >{{ componentSection.sectionName }}</a>
                 <div
                     v-if="componentSection.subTitle === '' ? false : true"
                     class="sub-title"
-                >
-                    {{ componentSection.subTitle }}
-                </div>
+                >{{ componentSection.subTitle }}</div>
                 <ul class="pure-menu-list">
                     <li
                         v-bind:key="sectionItem.itemName"
                         v-for="sectionItem in componentSection.sectionItems"
                         class="nav-item"
                     >
-                        <router-link v-bind:to="sectionItem.itemPath"
-                            >{{ sectionItem.itemName }}
-                        </router-link>
+                        <router-link v-bind:to="sectionItem.itemPath">{{ sectionItem.itemName }}</router-link>
                     </li>
                 </ul>
             </div>
@@ -90,7 +76,7 @@ export default {
             const lang = evt.target.dataset.lang;
             localStorage.setItem("language", lang);
             return history.go(0);
-        },
+        }
     },
     computed: {
         currentPage() {
@@ -98,13 +84,16 @@ export default {
             // :class="[currentPage.includes('theme') ? classNameA : classNameB]"
             console.log(this.$route.path);
             return this.$route.path;
-        },
-    },
+        }
+    }
 };
 </script>
 
 <style lang="scss" scoped>
-$green: #38ada9;
+$key-color: #38ada9;
+$font-color: #132420;
+$nav-item-font-size: 10px;
+$content-font-size: 14px;
 
 #sidebar {
     width: 10rem;
@@ -116,8 +105,8 @@ $green: #38ada9;
         font-weight: bold;
     }
     .section .sub-title {
-        font-size: 10px;
-        color: #999;
+        font-size: $nav-item-font-size;
+        color: opacify($font-color, 0.8);
     }
 }
 
@@ -138,18 +127,16 @@ ul {
     margin: 0;
     list-style: none;
     padding: 0;
-    font-size: 14px;
+    font-size: $content-font-size;
     .nav-item {
         padding-left: 10px;
-    }
-
-    .nav-item a {
-        margin: 0;
-        color: black;
-    }
-
-    .nav-item a.router-link-exact-active {
-        color: $green;
+        a {
+            margin: 0;
+            color: $font-color;
+            &.router-link-exact-active {
+                color: $key-color;
+            }
+        }
     }
 }
 </style>

@@ -15,8 +15,9 @@
                         : 'nav-link',
                 ]"
                 :to="'/' + navItem.alias"
-                >{{
-                    navItem.name.charAt(0).toUpperCase() + navItem.name.slice(1)
+            >
+                {{
+                navItem.name.charAt(0).toUpperCase() + navItem.name.slice(1)
                 }}
             </router-link>
 
@@ -31,18 +32,18 @@ import {} from "vuex";
 export default {
     name: "NavBar",
     components: {
-        Dropdown,
+        Dropdown
     },
     data() {
         return {
             hoveringLink: "",
-            activeClass: "active",
+            activeClass: "active"
         };
     },
     methods: {
         currentHoveringLinkIs(linkName) {
             return this.hoveringLink === linkName;
-        },
+        }
     },
     computed: {
         currentMainPage() {
@@ -58,13 +59,25 @@ export default {
             // :class="[currentPage.includes('theme') ? classNameA : classNameB]"
             var routerPath = this.$route.path;
             return routerPath;
-        },
-    },
+        }
+    }
 };
 </script>
 
 <style lang="scss" scoped>
-$green: #38ada9;
+$key-color: #38ada9;
+$font-color: #2c3e50;
+%mouse-hover-active-color {
+    color: $key-color;
+    opacity: 1;
+}
+
+%x-browser-transition {
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+}
 
 #NavBar {
     display: flex;
@@ -74,28 +87,23 @@ $green: #38ada9;
     border-bottom: 1px #ccc solid;
     a {
         font-weight: bold;
-        color: #2c3e50;
+        color: $font-color;
         opacity: 0.5;
         text-decoration: none;
         height: 4rem;
         display: flex;
         align-items: center;
-        -webkit-transition: all 0.1s ease-in-out;
-        -moz-transition: all 0.1s ease-in-out;
-        -ms-transition: all 0.1s ease-in-out;
-        -o-transition: all 0.1s ease-in-out;
-    }
+        @extend %x-browser-transition;
 
-    a.nav-link-hovered {
-        color: $green;
-        opacity: 1;
-    }
+        &.nav-link-hovered,
+        &.router-link-exact-active {
+            @extend %mouse-hover-active-color;
+        }
 
-    a.router-link-exact-active {
-        color: $green;
-        opacity: 1;
-        border-spacing: 10px;
-        border-bottom: 2px $green solid;
+        &.router-link-exact-active {
+            border-spacing: 10px;
+            border-bottom: 2px $key-color solid;
+        }
     }
 }
 
@@ -113,7 +121,7 @@ $green: #38ada9;
     }
 
     #NavBar a.router-link-exact-active {
-        color: $green;
+        color: $key-color;
         opacity: 1;
         border: none;
     }

@@ -1,12 +1,6 @@
 <template>
     <div id="searchbox">
-        <input
-            class="textInput"
-            v-model="message"
-            type="text"
-            ref="search"
-            placeholder="Search"
-        />
+        <input class="textInput" v-model="message" type="text" ref="search" placeholder="Search" />
     </div>
 </template>
 
@@ -17,7 +11,7 @@ export default {
     name: "SearchBox",
     data() {
         return {
-            message: "",
+            message: ""
         };
     },
     methods: {
@@ -28,12 +22,12 @@ export default {
         },
         handleFocus() {
             // this.$refs.search.$el.focus();
-        },
+        }
     },
     updated() {
         // use debounce to stablize search result within 1 sec
         debounce(this.callMappedAction, 1000)();
-    },
+    }
     // mounted() {
     //     this.$nextTick(() => this.$refs.search.focus());
     // }
@@ -41,35 +35,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$green: #38ada9;
+$key-color: #38ada9;
 $borderWidth: 1px;
-#searchbox {
-    text-align: left;
+%border-style {
     border: none;
     outline: none;
-    // border: solid 1px #ccc;
-    // border-radius: 4px;
+    border: {
+        width: $borderWidth;
+        style: solid;
+        radius: 4px;
+    }
 }
 
-#searchbox .textInput {
-    height: 1.2rem;
-    padding: 0 10px;
-    border: none;
-    outline: 0;
-    border-width: $borderWidth;
-    border-style: solid;
-    border-color: #ccc;
-    border-radius: 4px;
-    &:active,
-    &:focus {
-        border: none;
-        outline: 0;
-        border-width: $borderWidth;
-        border-style: solid;
-        border-color: lighten($green, 5%);
-        border-radius: 4px;
-        box-shadow: lighten($green, 5%);
-        transition: ease-in-out;
+#searchbox {
+    text-align: left;
+    .textInput {
+        height: 1.2rem;
+        padding: 0 10px;
+        @extend %border-style;
+        border-color: #ccc;
+        &:active,
+        &:focus {
+            border-color: lighten($key-color, 5%);
+            box-shadow: lighten($key-color, 5%);
+            transition: ease-in-out;
+        }
     }
 }
 </style>
