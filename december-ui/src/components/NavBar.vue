@@ -8,10 +8,10 @@
                 @mouseenter.native="hoveringLink = navItem.alias"
                 @mouseleave.native="hoveringLink = 'none'"
                 :class="[
-                    currentHoveringLinkIs(navItem.alias)
-                        ? 'nav-link-hovered'
-                        : currentMainPage.includes(navItem.alias)
+                    currentMainPage.includes(navItem.alias)
                         ? 'router-link-exact-active'
+                        : currentHoveringLinkIs(navItem.alias)
+                        ? 'nav-link-hovered'
                         : 'nav-link',
                 ]"
                 :to="'/' + navItem.alias"
