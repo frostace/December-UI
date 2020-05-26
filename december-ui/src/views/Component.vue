@@ -1,9 +1,6 @@
 <template>
-    <router-view></router-view>
+    <div class="about">
+        <!-- nested level router view element -->
+        <router-view></router-view>
+    </div>
 </template>
-
-<script>
-export default {};
-</script>
-
-<style lang="scss" scoped></style>

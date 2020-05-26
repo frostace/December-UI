@@ -4,11 +4,12 @@
         <LeftSidebar
             v-if="
                 currentPage.includes('guide') ||
-                    currentPage.includes('component')
+                currentPage.includes('component')
             "
             class="leftsidebar"
         />
-        <router-view v-bind:class="getRouterViewClass" v-bind:name="currentSubPage" />
+        <!-- outer level router view -->
+        <router-view v-bind:class="getRouterViewClass" />
     </div>
 </template>
 
@@ -39,6 +40,11 @@ export default {
         },
         currentSubPage() {
             var routerPath = this.$route.path;
+            console.log(
+                routerPath.includes("component")
+                    ? routerPath.slice(routerPath.lastIndexOf("/") + 1)
+                    : undefined
+            );
             return routerPath.includes("component")
                 ? routerPath.slice(routerPath.lastIndexOf("/") + 1)
                 : undefined;

@@ -2,11 +2,15 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Welcome from "../views/Welcome.vue";
 import Guide from "../views/Guide.vue";
+import Component from "../views/Component.vue";
 import Installation from "../views/Installation";
 import QuickStart from "../views/QuickStart";
 import Internationalization from "../views/Internationalization";
 import CustomTheme from "../views/CustomTheme";
 import BuiltinTransition from "../views/BuiltinTransition";
+// components
+import Layout from "../views/Layout";
+import Button from "../views/Button";
 Vue.use(VueRouter);
 
 const routes = [
@@ -20,7 +24,6 @@ const routes = [
         redirect: "/guide/installation",
         name: "guide",
         component: Guide,
-
         children: [
             {
                 path: "installation",
@@ -29,7 +32,7 @@ const routes = [
             },
             {
                 path: "quickstart",
-                name: "guide.quickstart",
+                name: "quickstart",
                 component: QuickStart,
             },
             {
@@ -51,12 +54,24 @@ const routes = [
     },
     {
         path: "/component",
+        redirect: "/component/layout",
         name: "component",
         // route level code-splitting
         // this generates a separate chunk (Component.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () =>
-            import(/* webpackChunkName: "Theme" */ "../views/Component.vue"),
+        component: Component,
+        children: [
+            {
+                path: "layout",
+                name: "layout",
+                component: Layout,
+            },
+            {
+                path: "button",
+                name: "button",
+                component: Button,
+            },
+        ],
     },
     {
         path: "/theme",
