@@ -52,7 +52,8 @@
                     <code class="little-code">type</code>,
                     <code class="little-code">plain</code>,
                     <code class="little-code">round</code> and
-                    <code class="little-code">circle</code> to define Button's style.
+                    <code class="little-code">circle</code> to define Button's
+                    style.
                 </div>
                 <pre><div class="code-area"><code class="html">
 <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-row</span><span class="hljs-tag">&gt;</span>
@@ -113,12 +114,15 @@
                         </code></div></pre>
             </div>
             <div class="code-block-control">
-                <font-awesome-icon icon="caret-down" size="x" />
+                <div class="expand-control">
+                    <font-awesome-icon icon="caret-down" size="x" />
+                    <span>Expand</span>
+                </div>
+                <button>Try It!</button>
             </div>
         </div>
     </div>
 </template>
-
 
 <script>
 import Button from "../components/Button";
@@ -130,144 +134,144 @@ export default {
                 {
                     type: "",
                     content: "Default",
-                    size: "medium"
+                    size: "medium",
                 },
                 {
                     type: "primary",
                     content: "Primary",
-                    size: "medium"
+                    size: "medium",
                 },
                 {
                     type: "success",
                     content: "Success",
-                    size: "medium"
+                    size: "medium",
                 },
                 {
                     type: "info",
                     content: "Info",
-                    size: "medium"
+                    size: "medium",
                 },
                 {
                     type: "warning",
                     content: "Warning",
-                    size: "medium"
+                    size: "medium",
                 },
                 {
                     type: "danger",
                     content: "Danger",
-                    size: "medium"
-                }
+                    size: "medium",
+                },
             ],
             buttonPropsPlain: [
                 {
                     type: "",
                     content: "Plain",
-                    size: "medium"
+                    size: "medium",
                 },
                 {
                     type: "primary",
                     content: "Primary",
                     size: "medium",
-                    plain: "true"
+                    plain: "true",
                 },
                 {
                     type: "success",
                     content: "Success",
-                    size: "medium"
+                    size: "medium",
                 },
                 {
                     type: "info",
                     content: "Info",
-                    size: "medium"
+                    size: "medium",
                 },
                 {
                     type: "warning",
                     content: "Warning",
-                    size: "medium"
+                    size: "medium",
                 },
                 {
                     type: "danger",
                     content: "Danger",
                     size: "medium",
-                    plain: "true"
-                }
+                    plain: "true",
+                },
             ],
             buttonPropsRound: [
                 {
                     type: "",
                     content: "Round",
                     size: "medium",
-                    plain: "true"
+                    plain: "true",
                 },
                 {
                     type: "primary",
                     content: "Primary",
-                    size: "medium"
+                    size: "medium",
                 },
                 {
                     type: "success",
                     content: "Success",
-                    size: "medium"
+                    size: "medium",
                 },
                 {
                     type: "info",
                     content: "Info",
-                    size: "medium"
+                    size: "medium",
                 },
                 {
                     type: "warning",
                     content: "Warning",
-                    size: "medium"
+                    size: "medium",
                 },
                 {
                     type: "danger",
                     content: "Danger",
-                    size: "medium"
-                }
+                    size: "medium",
+                },
             ],
             buttonPropsCircle: [
                 {
                     type: "",
                     content: "",
                     size: "medium",
-                    iconName: "search"
+                    iconName: "search",
                 },
                 {
                     type: "primary",
                     content: "",
                     size: "medium",
-                    iconName: "edit"
+                    iconName: "edit",
                 },
                 {
                     type: "success",
                     content: "",
                     size: "medium",
-                    iconName: "check"
+                    iconName: "check",
                 },
                 {
                     type: "info",
                     content: "",
                     size: "medium",
-                    iconName: "envelope"
+                    iconName: "envelope",
                 },
                 {
                     type: "warning",
                     content: "",
                     size: "medium",
-                    iconName: "star"
+                    iconName: "star",
                 },
                 {
                     type: "danger",
                     content: "",
                     size: "medium",
-                    iconName: "trash-alt"
-                }
-            ]
+                    iconName: "trash-alt",
+                },
+            ],
         };
     },
     components: {
-        Button
-    }
+        Button,
+    },
 };
 </script>
 
@@ -303,8 +307,9 @@ $green: #38ada9;
     display: flex;
     height: 40px;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    position: relative;
     border: {
         style: solid;
         color: #eee;
@@ -312,17 +317,58 @@ $green: #38ada9;
         radius: 0 0 4px 4px;
     }
     border-top: none;
+
+    cursor: pointer;
+    .expand-control {
+        flex: 0 1 auto;
+        position: absolute;
+        left: 50%;
+    }
+
     i,
     svg {
         color: #ccc;
-        &:hover {
-            color: $green;
-        }
+        transition: 0.3s;
+    }
+
+    span {
+        display: none;
+        margin-left: 10px;
+    }
+
+    button {
+        flex: 0 1 auto;
+        margin-left: auto;
+        border: none;
+        display: none;
+        color: $green;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+}
+
+div.demo:hover {
+    svg {
+        color: #ccc;
+    }
+    span {
+        display: inline-block;
+        color: #ccc;
+    }
+    button {
+        display: inline;
     }
 }
 
 div.code-block-control:hover {
-    color: red;
+    svg {
+        color: $green;
+    }
+    span {
+        display: inline-block;
+        color: $green;
+    }
 }
 
 .code-block {

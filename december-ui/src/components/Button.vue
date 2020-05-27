@@ -13,16 +13,16 @@
                 'is-loading': loading,
                 'is-plain': plain,
                 'is-round': round,
-                'is-circle': circle
-            }
-    ]"
+                'is-circle': circle,
+            },
+        ]"
     >
         <i class="dc-icon-loading" v-if="loading"></i>
         <i :class="icon" v-if="icon && !loading"></i>
         <span v-if="$slots.default">
             <slot></slot>
         </span>
-        {{content}}
+        {{ content }}
         <font-awesome-icon v-if="circle" :icon="iconName" size="x" />
     </button>
 </template>
@@ -32,29 +32,29 @@ export default {
     name: "dc-button",
     inject: {
         elForm: {
-            default: ""
+            default: "",
         },
         elFormItem: {
-            default: ""
-        }
+            default: "",
+        },
     },
     props: {
         type: {
             type: String,
-            default: "default"
+            default: "default",
         },
         content: {
             type: String,
-            default: "button"
+            default: "button",
         },
         size: String,
         icon: {
             type: String,
-            default: ""
+            default: "",
         },
         nativeType: {
             type: String,
-            default: "button"
+            default: "button",
         },
         loading: Boolean,
         disabled: Boolean,
@@ -62,7 +62,7 @@ export default {
         autofocus: Boolean,
         round: Boolean,
         circle: Boolean,
-        iconName: String
+        iconName: String,
     },
     computed: {
         _elFormItemSize() {
@@ -75,13 +75,13 @@ export default {
         },
         buttonDisabled() {
             return this.disabled || (this.elForm || {}).disabled;
-        }
+        },
     },
     methods: {
         handleClick(evt) {
             this.$emit("click", evt);
-        }
-    }
+        },
+    },
 };
 </script>
 
@@ -145,9 +145,9 @@ export default {
 
 .is-round {
     border-radius: 30px;
-    &:hover {
-        color: red;
-    }
+    // &:hover {
+    //     color: red;
+    // }
 }
 
 .is-circle {
