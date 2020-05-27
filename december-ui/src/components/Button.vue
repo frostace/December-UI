@@ -23,6 +23,7 @@
             <slot></slot>
         </span>
         {{content}}
+        <font-awesome-icon v-if="circle" :icon="iconName" size="x" />
     </button>
 </template>
 
@@ -60,7 +61,8 @@ export default {
         plain: Boolean,
         autofocus: Boolean,
         round: Boolean,
-        circle: Boolean
+        circle: Boolean,
+        iconName: String
     },
     computed: {
         _elFormItemSize() {
@@ -143,9 +145,13 @@ export default {
 
 .is-round {
     border-radius: 30px;
+    &:hover {
+        color: red;
+    }
 }
 
 .is-circle {
     border-radius: 30px;
+    padding: 12px;
 }
 </style>

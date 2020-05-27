@@ -1,48 +1,121 @@
 <template>
-    <div class="demo">
-        <div class="demo-block">
-            <div class="dc-row dc-row-default">
-                <Button
-                    :key="index"
-                    v-for="(buttonprop, index) in buttonPropsDefault"
-                    v-bind:type="buttonprop.type"
-                    :content="buttonprop.content"
-                    :size="buttonprop.size"
-                />
+    <div>
+        <h2>Button</h2>
+        <p>Commonly used button</p>
+        <h3>Basic usage</h3>
+        <div class="demo">
+            <div class="demo-block">
+                <div class="dc-row dc-row-default">
+                    <Button
+                        :key="index"
+                        v-for="(buttonprop, index) in buttonPropsDefault"
+                        v-bind:type="buttonprop.type"
+                        :content="buttonprop.content"
+                        :size="buttonprop.size"
+                    />
+                </div>
+                <div class="dc-row dc-row-plain">
+                    <Button
+                        :key="index"
+                        v-for="(buttonprop, index) in buttonPropsPlain"
+                        v-bind:type="buttonprop.type"
+                        :content="buttonprop.content"
+                        :size="buttonprop.size"
+                        plain
+                    />
+                </div>
+                <div class="dc-row dc-row-round">
+                    <Button
+                        :key="index"
+                        v-for="(buttonprop, index) in buttonPropsRound"
+                        v-bind:type="buttonprop.type"
+                        :content="buttonprop.content"
+                        :size="buttonprop.size"
+                        round
+                    />
+                </div>
+                <div class="dc-row dc-row-circle">
+                    <Button
+                        :key="index"
+                        v-for="(buttonprop, index) in buttonPropsCircle"
+                        v-bind:type="buttonprop.type"
+                        :content="buttonprop.content"
+                        :size="buttonprop.size"
+                        :iconName="buttonprop.iconName"
+                        circle
+                    />
+                </div>
             </div>
-            <div class="dc-row dc-row-plain">
-                <Button
-                    :key="index"
-                    v-for="(buttonprop, index) in buttonPropsPlain"
-                    v-bind:type="buttonprop.type"
-                    :content="buttonprop.content"
-                    :size="buttonprop.size"
-                    plain
-                />
+            <div class="code-block">
+                <div class="description">
+                    Use
+                    <code class="little-code">type</code>,
+                    <code class="little-code">plain</code>,
+                    <code class="little-code">round</code> and
+                    <code class="little-code">circle</code> to define Button's style.
+                </div>
+                <pre><div class="code-area"><code class="html">
+<span class="hljs-tag">&lt;</span><span class="hljs-name">dc-row</span><span class="hljs-tag">&gt;</span>
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button</span><span class="hljs-tag">&gt;</span>Default<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="primary"</span><span class="hljs-tag">&gt;</span>Primary<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="success"</span><span class="hljs-tag">&gt;</span>Success<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="info"</span><span class="hljs-tag">&gt;</span>Info<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="warning"</span><span class="hljs-tag">&gt;</span>Warning<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="danger"</span><span class="hljs-tag">&gt;</span>Danger<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-row</span><span class="hljs-tag">&gt;</span>
+
+<span class="hljs-tag">&lt;</span><span class="hljs-name">dc-row</span><span class="hljs-tag">&gt;</span>
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button plain</span><span class="hljs-tag">&gt;</span>Plain<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="primary" plain</span><span class="hljs-tag">&gt;</span>Primary<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="success" plain</span><span class="hljs-tag">&gt;</span>Success<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="info" plain</span><span class="hljs-tag">&gt;</span>Info<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="warning" plain</span><span class="hljs-tag">&gt;</span>Warning<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="danger" plain</span><span class="hljs-tag">&gt;</span>Danger<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-row</span><span class="hljs-tag">&gt;</span>
+
+<span class="hljs-tag">&lt;</span><span class="hljs-name">dc-row</span><span class="hljs-tag">&gt;</span>
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button round</span><span class="hljs-tag">&gt;</span>Round<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="primary" round</span><span class="hljs-tag">&gt;</span>Primary<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="success" round</span><span class="hljs-tag">&gt;</span>Success<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="info" round</span><span class="hljs-tag">&gt;</span>Info<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="warning" round</span><span class="hljs-tag">&gt;</span>Warning<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button type="danger" round</span><span class="hljs-tag">&gt;</span>Danger<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-row</span><span class="hljs-tag">&gt;</span>
+
+<span class="hljs-tag">&lt;</span><span class="hljs-name">dc-row</span><span class="hljs-tag">&gt;</span>
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button icon="dl-icon-search" circle</span><span class="hljs-tag">&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span
+    class="hljs-name"
+>dc-button type="primary" icon="dl-icon-edit" circle</span><span
+    class="hljs-tag"
+>&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span
+    class="hljs-name"
+>dc-button type="success" icon="dl-icon-check" circle</span><span
+    class="hljs-tag"
+>&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span
+    class="hljs-name"
+>dc-button type="info" icon="dl-icon-message" circle</span><span
+    class="hljs-tag"
+>&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span
+    class="hljs-name"
+>dc-button type="warning" icon="dl-icon-star-off" circle</span><span
+    class="hljs-tag"
+>&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span
+    class="hljs-name"
+>dc-button type="danger" icon="dl-icon-delete" circle</span><span
+    class="hljs-tag"
+>&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-row</span><span class="hljs-tag">&gt;</span>
+                        </code></div></pre>
             </div>
-            <div class="dc-row dc-row-round">
-                <Button
-                    :key="index"
-                    v-for="(buttonprop, index) in buttonPropsRound"
-                    v-bind:type="buttonprop.type"
-                    :content="buttonprop.content"
-                    :size="buttonprop.size"
-                    round
-                />
-            </div>
-            <div class="dc-row dc-row-circle">
-                <Button
-                    :key="index"
-                    v-for="(buttonprop, index) in buttonPropsCircle"
-                    v-bind:type="buttonprop.type"
-                    :content="buttonprop.content"
-                    :size="buttonprop.size"
-                    circle
-                />
+            <div class="code-block-control">
+                <font-awesome-icon icon="caret-down" size="x" />
             </div>
         </div>
-        <div class="code-block"></div>
-        <div class="code-block-control"></div>
     </div>
 </template>
 
@@ -57,46 +130,39 @@ export default {
                 {
                     type: "",
                     content: "Default",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 },
                 {
                     type: "primary",
                     content: "Primary",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 },
                 {
                     type: "success",
                     content: "Success",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 },
                 {
                     type: "info",
                     content: "Info",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 },
                 {
                     type: "warning",
                     content: "Warning",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 },
                 {
                     type: "danger",
                     content: "Danger",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 }
             ],
             buttonPropsPlain: [
                 {
                     type: "",
                     content: "Plain",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 },
                 {
                     type: "primary",
@@ -107,20 +173,17 @@ export default {
                 {
                     type: "success",
                     content: "Success",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 },
                 {
                     type: "info",
                     content: "Info",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 },
                 {
                     type: "warning",
                     content: "Warning",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 },
                 {
                     type: "danger",
@@ -139,32 +202,27 @@ export default {
                 {
                     type: "primary",
                     content: "Primary",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 },
                 {
                     type: "success",
                     content: "Success",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 },
                 {
                     type: "info",
                     content: "Info",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 },
                 {
                     type: "warning",
                     content: "Warning",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 },
                 {
                     type: "danger",
                     content: "Danger",
-                    size: "medium",
-                    plain: "true"
+                    size: "medium"
                 }
             ],
             buttonPropsCircle: [
@@ -172,37 +230,37 @@ export default {
                     type: "",
                     content: "",
                     size: "medium",
-                    plain: "true"
+                    iconName: "search"
                 },
                 {
                     type: "primary",
                     content: "",
                     size: "medium",
-                    plain: "true"
+                    iconName: "edit"
                 },
                 {
                     type: "success",
                     content: "",
                     size: "medium",
-                    plain: "true"
+                    iconName: "check"
                 },
                 {
                     type: "info",
                     content: "",
                     size: "medium",
-                    plain: "true"
+                    iconName: "envelope"
                 },
                 {
                     type: "warning",
                     content: "",
                     size: "medium",
-                    plain: "true"
+                    iconName: "star"
                 },
                 {
                     type: "danger",
                     content: "",
                     size: "medium",
-                    plain: "true"
+                    iconName: "trash-alt"
                 }
             ]
         };
@@ -214,14 +272,98 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.dc-row {
-    display: inline-flex;
-    flex-wrap: wrap;
+$green: #38ada9;
+
+.demo-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    border: {
+        style: solid;
+        color: #eee;
+        width: 1px;
+        radius: 4px 4px 0 0;
+    }
+    padding: 24px;
+
+    .dc-row {
+        display: inline-flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.code-block-control {
+    display: flex;
+    height: 40px;
     flex-direction: row;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
-    > * {
-        margin-bottom: 20px;
+    border: {
+        style: solid;
+        color: #eee;
+        width: 1px;
+        radius: 0 0 4px 4px;
+    }
+    border-top: none;
+    i,
+    svg {
+        color: #ccc;
+        &:hover {
+            color: $green;
+        }
+    }
+}
+
+div.code-block-control:hover {
+    color: red;
+}
+
+.code-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 0px;
+    overflow: hidden;
+    background-color: transparentize($color: #ccc, $amount: 0.9);
+    border: {
+        style: solid;
+        color: #eee;
+        width: 1px;
+    }
+    border-top: none;
+    .description {
+        background-color: white;
+        padding: 16px;
+        margin: 10px;
+        border: {
+            style: solid;
+            color: #eee;
+            width: 1px;
+            radius: 4px;
+        }
+
+        .little-code {
+            background-color: transparentize($color: $green, $amount: 0.8);
+            border-radius: 2px;
+            padding: 1px 5px;
+            margin: 0 4px;
+        }
+    }
+
+    pre {
+        margin: 0;
+    }
+
+    .code-area {
+        padding: 12px 24px;
     }
 }
 </style>
