@@ -1,0 +1,82 @@
+@import "../assets/var";
+
+@mixin decent-transition {
+    -webkit-transition: 0.3s ease-out;
+    -moz-transition: 0.3s ease-in-out;
+    -ms-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+@mixin hide-item {
+    display: none;
+    opacity: 0;
+}
+
+@mixin show-item {
+    display: inline-block;
+    opacity: 1;
+}
+
+@mixin transparentize-item {
+    opacity: 0;
+}
+
+@mixin opacify-item {
+    opacity: 1;
+}
+
+@mixin decent-shadow {
+    -webkit-box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
+        0 2px 4px 0 rgba(232, 237, 250, 0.5);
+    -moz-box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
+        0 2px 4px 0 rgba(232, 237, 250, 0.5);
+    -ms-box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
+        0 2px 4px 0 rgba(232, 237, 250, 0.5);
+    -o-box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
+        0 2px 4px 0 rgba(232, 237, 250, 0.5);
+    box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
+        0 2px 4px 0 rgba(232, 237, 250, 0.5);
+}
+
+@mixin clear-select-effect {
+    -webkit-user-select: none; /* Chrome all / Safari all */
+    -moz-user-select: none; /* Firefox all */
+    -ms-user-select: none; /* IE 10+ */
+    -o-user-select: none; /* IE 9- */
+    user-select: none; /* Likely future */
+}
+
+@function get-bkg-color-hover($baseColor) {
+    @if ($baseColor != #fff) {
+        @return transparentize($baseColor, 0.2);
+    } @else {
+        @return transparentize($--primary-color, 0.8);
+    }
+}
+
+@mixin set-bkg-color-with-hover($baseColor) {
+    background-color: $baseColor;
+    &:hover:not([disabled]) {
+        background-color: get-bkg-color-hover($baseColor);
+        @if ($baseColor == #fff) {
+            border-color: transparentize($--primary-color, 0.4);
+        }
+    }
+}
+
+@function set-text-color($bkgcolor) {
+    @if (lightness($bkgcolor) > 70) {
+        @return #606266;
+    } @else {
+        @return white;
+    }
+}
+
+@mixin default-border-style($border-color) {
+    border: {
+        style: solid;
+        width: 1px;
+        color: $border-color;
+    }
+}

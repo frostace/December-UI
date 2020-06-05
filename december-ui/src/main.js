@@ -4,14 +4,17 @@ import router from "./router";
 import store from "./store";
 // import font-awesome
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+    faChevronDown,
+    faCaretDown,
+    faCaretUp,
+    faSearch,
+    faEdit,
+    faCheck,
+    faEnvelope,
+    faStar,
+    faTrashAlt,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 // add code block lib
 import "../node_modules/vue-hljs/dist/vue-hljs.min.css";
@@ -22,6 +25,7 @@ import i18n from "../common/plugins/vue-i18n";
 library.add(
     faChevronDown,
     faCaretDown,
+    faCaretUp,
     faSearch,
     faEdit,
     faCheck,

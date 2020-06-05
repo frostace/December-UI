@@ -10,7 +10,7 @@ import CustomTheme from "../views/CustomTheme";
 import BuiltinTransition from "../views/BuiltinTransition";
 // components
 import Layout from "../views/Layout";
-import Button from "../views/Button";
+import ButtonView from "../views/ButtonView";
 Vue.use(VueRouter);
 
 const routes = [
@@ -69,7 +69,7 @@ const routes = [
             {
                 path: "button",
                 name: "button",
-                component: Button,
+                component: ButtonView,
             },
         ],
     },
