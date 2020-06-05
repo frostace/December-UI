@@ -1,31 +1,29 @@
 <template>
-    <div class="demo-block">
+    <div id="demo-block">
         <div class="dc-row dc-row-default">
-            <Button
+            <dc-button
                 :key="index"
                 v-for="(buttonprop, index) in buttonPropsDefault"
                 v-bind:type="buttonprop.type"
-                :content="buttonprop.content"
                 :size="buttonprop.size"
                 disabled
-            />
+            >{{buttonprop.content}}</dc-button>
         </div>
         <div class="dc-row dc-row-plain">
-            <Button
+            <dc-button
                 :key="index"
                 v-for="(buttonprop, index) in buttonPropsPlain"
                 v-bind:type="buttonprop.type"
-                :content="buttonprop.content"
                 :size="buttonprop.size"
                 plain
                 disabled
-            />
+            >{{buttonprop.content}}</dc-button>
         </div>
     </div>
 </template>
 
 <script>
-import Button from "../components/Button";
+import dcButton from "../components/Button";
 export default {
     data() {
         return {
@@ -169,7 +167,7 @@ export default {
         };
     },
     components: {
-        Button
+        dcButton
     }
 };
 </script>
@@ -177,17 +175,11 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/var.scss";
 
-.demo-block {
+#demo-block {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    border: {
-        style: solid;
-        color: #eee;
-        width: 1px;
-        radius: 4px 4px 0 0;
-    }
     padding: 24px;
 
     .dc-row {

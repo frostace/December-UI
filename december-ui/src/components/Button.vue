@@ -17,13 +17,12 @@
             },
         ]"
     >
-        <i class="dc-icon-loading" v-if="loading"></i>
-        <i :class="icon" v-if="icon && !loading"></i>
+        <font-awesome-icon class="dc-icon-loading" icon="spinner" v-if="loading" />
+        <!-- <i class="dc-icon-loading" v-if="loading"></i> -->
+        <!-- <i :class="icon" v-if="icon && !loading"></i> -->
         <span v-if="$slots.default">
             <slot></slot>
         </span>
-        {{ content }}
-        <font-awesome-icon v-if="circle" :icon="iconName" size="x" />
     </button>
 </template>
 
@@ -42,10 +41,6 @@ export default {
         type: {
             type: String,
             default: "default"
-        },
-        content: {
-            type: String,
-            default: "button"
         },
         size: String,
         icon: {
@@ -91,6 +86,7 @@ export default {
 @import "../assets/presets";
 * {
     font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-weight: bold;
 }
 
 @mixin set-button-styling($button-theme-color) {
@@ -98,7 +94,7 @@ export default {
     @if ($button-theme-color == #fff) {
         @include default-border-style($--button-default-border-color);
     } @else {
-        border: none;
+        @include default-border-style($button-theme-color);
     }
     color: set-text-color($button-theme-color);
     &.is-plain {
@@ -122,6 +118,14 @@ export default {
         cursor: not-allowed;
         opacity: 0.5;
     }
+    &--text {
+        border: none;
+        color: $--primary-color;
+        &:hover:not([disabled]) {
+            background-color: #fff;
+            color: transparentize($color: $--primary-color, $amount: 0.3);
+        }
+    }
 }
 
 .dc-button {
@@ -142,26 +146,46 @@ export default {
     border-radius: 4px;
     transition: 0.1s;
     @include set-button-styling(#fff);
-}
-
-.dc-button--primary {
-    @include set-button-styling($--primary-color);
-}
-.dc-button--success {
-    @include set-button-styling($--success-color);
-}
-.dc-button--info {
-    @include set-button-styling($--info-color);
-}
-.dc-button--warning {
-    @include set-button-styling($--warning-color);
-}
-.dc-button--danger {
-    @include set-button-styling($--danger-color);
+    &--primary {
+        @include set-button-styling($--primary-color);
+    }
+    &--success {
+        @include set-button-styling($--success-color);
+    }
+    &--info {
+        @include set-button-styling($--info-color);
+    }
+    &--warning {
+        @include set-button-styling($--warning-color);
+    }
+    &--danger {
+        @include set-button-styling($--danger-color);
+    }
+    &--medium {
+        width: 76px;
+        height: 34px;
+        padding: 10px 16px;
+    }
+    &--small {
+        width: 55px;
+        height: 30px;
+        padding: 8px 13px;
+        font-size: 10px;
+    }
+    &--mini {
+        width: 45px;
+        height: 25px;
+        padding: 6px 10px;
+        font-size: 10px;
+    }
 }
 
 .is-circle {
     border-radius: 30px;
     padding: 12px;
+}
+
+.dc-icon-loading {
+    @include rotate-forever;
 }
 </style>

@@ -1,116 +1,97 @@
 <template>
-    <div class="demo-block">
+    <div id="demo-block">
         <div class="dc-row dc-row-default">
-            <Button
+            <dc-button
                 :key="index"
                 v-for="(buttonprop, index) in buttonPropsDefault"
                 v-bind:type="buttonprop.type"
-                :content="buttonprop.content"
-                :size="buttonprop.size"
-            />
+            >{{buttonprop.content}}</dc-button>
         </div>
         <div class="dc-row dc-row-plain">
-            <Button
+            <dc-button
                 :key="index"
                 v-for="(buttonprop, index) in buttonPropsPlain"
                 v-bind:type="buttonprop.type"
-                :content="buttonprop.content"
-                :size="buttonprop.size"
                 plain
-            />
+            >{{buttonprop.content}}</dc-button>
         </div>
         <div class="dc-row dc-row-round">
-            <Button
+            <dc-button
                 :key="index"
                 v-for="(buttonprop, index) in buttonPropsRound"
                 v-bind:type="buttonprop.type"
-                :content="buttonprop.content"
-                :size="buttonprop.size"
                 round
-            />
+            >{{buttonprop.content}}</dc-button>
         </div>
         <div class="dc-row dc-row-circle">
-            <Button
+            <dc-button
                 :key="index"
                 v-for="(buttonprop, index) in buttonPropsCircle"
                 v-bind:type="buttonprop.type"
-                :content="buttonprop.content"
-                :size="buttonprop.size"
-                :iconName="buttonprop.iconName"
                 circle
-            />
+            >
+                <font-awesome-icon :icon="buttonprop.iconName" />
+            </dc-button>
         </div>
     </div>
 </template>
 
 <script>
-import Button from "../components/Button";
+import dcButton from "../components/Button";
 export default {
     data() {
         return {
             buttonPropsDefault: [
                 {
-                    type: "",
-                    content: "Default",
-                    size: "medium"
+                    type: "default",
+                    content: "Default"
                 },
                 {
                     type: "primary",
-                    content: "Primary",
-                    size: "medium"
+                    content: "Primary"
                 },
                 {
                     type: "success",
-                    content: "Success",
-                    size: "medium"
+                    content: "Success"
                 },
                 {
                     type: "info",
-                    content: "Info",
-                    size: "medium"
+                    content: "Info"
                 },
                 {
                     type: "warning",
-                    content: "Warning",
-                    size: "medium"
+                    content: "Warning"
                 },
                 {
                     type: "danger",
-                    content: "Danger",
-                    size: "medium"
+                    content: "Danger"
                 }
             ],
             buttonPropsPlain: [
                 {
-                    type: "",
-                    content: "Plain",
-                    size: "medium"
+                    type: "default",
+                    content: "Plain"
                 },
                 {
                     type: "primary",
                     content: "Primary",
-                    size: "medium",
                     plain: "true"
                 },
                 {
                     type: "success",
-                    content: "Success",
-                    size: "medium"
+                    content: "Success"
                 },
                 {
                     type: "info",
-                    content: "Info",
-                    size: "medium"
+                    content: "Info"
                 },
                 {
                     type: "warning",
-                    content: "Warning",
-                    size: "medium"
+                    content: "Warning"
                 },
                 {
                     type: "danger",
                     content: "Danger",
-                    size: "medium",
                     plain: "true"
                 }
             ],
@@ -118,77 +99,65 @@ export default {
                 {
                     type: "",
                     content: "Round",
-                    size: "medium",
                     plain: "true"
                 },
                 {
                     type: "primary",
-                    content: "Primary",
-                    size: "medium"
+                    content: "Primary"
                 },
                 {
                     type: "success",
-                    content: "Success",
-                    size: "medium"
+                    content: "Success"
                 },
                 {
                     type: "info",
-                    content: "Info",
-                    size: "medium"
+                    content: "Info"
                 },
                 {
                     type: "warning",
-                    content: "Warning",
-                    size: "medium"
+                    content: "Warning"
                 },
                 {
                     type: "danger",
-                    content: "Danger",
-                    size: "medium"
+                    content: "Danger"
                 }
             ],
             buttonPropsCircle: [
                 {
                     type: "",
                     content: "",
-                    size: "medium",
                     iconName: "search"
                 },
                 {
                     type: "primary",
                     content: "",
-                    size: "medium",
                     iconName: "edit"
                 },
                 {
                     type: "success",
                     content: "",
-                    size: "medium",
                     iconName: "check"
                 },
                 {
                     type: "info",
                     content: "",
-                    size: "medium",
                     iconName: "envelope"
                 },
                 {
                     type: "warning",
                     content: "",
-                    size: "medium",
                     iconName: "star"
                 },
                 {
                     type: "danger",
                     content: "",
-                    size: "medium",
                     iconName: "trash-alt"
                 }
             ]
         };
     },
     components: {
-        Button
+        dcButton
     }
 };
 </script>
@@ -196,17 +165,11 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/var.scss";
 
-.demo-block {
+#demo-block {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    border: {
-        style: solid;
-        color: #eee;
-        width: 1px;
-        radius: 4px 4px 0 0;
-    }
     padding: 24px;
 
     .dc-row {

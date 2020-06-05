@@ -45,9 +45,16 @@ export default {
 @import "../assets/var.scss";
 @import "../assets/presets.scss";
 
+.demo,
 span,
 button {
     @include clear-select-effect;
+}
+
+.demo-block {
+    @include default-border-style(#eee);
+    border-radius: 4px 4px 0 0;
+    border-bottom: none;
 }
 
 .code-block-control {

@@ -6,6 +6,8 @@ import store from "./store";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
     faChevronDown,
+    faChevronLeft,
+    faChevronRight,
     faCaretDown,
     faCaretUp,
     faSearch,
@@ -14,6 +16,9 @@ import {
     faEnvelope,
     faStar,
     faTrashAlt,
+    faCloudUploadAlt,
+    faShareAlt,
+    faSpinner,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 // add code block lib
@@ -24,6 +29,8 @@ import i18n from "../common/plugins/vue-i18n";
 
 library.add(
     faChevronDown,
+    faChevronLeft,
+    faChevronRight,
     faCaretDown,
     faCaretUp,
     faSearch,
@@ -31,7 +38,10 @@ library.add(
     faCheck,
     faEnvelope,
     faStar,
-    faTrashAlt
+    faTrashAlt,
+    faCloudUploadAlt,
+    faShareAlt,
+    faSpinner
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

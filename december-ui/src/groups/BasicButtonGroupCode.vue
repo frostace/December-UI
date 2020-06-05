@@ -28,30 +28,30 @@
 <span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-row</span><span class="hljs-tag">&gt;</span>
 
 <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-row</span><span class="hljs-tag">&gt;</span>
-    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button icon="dl-icon-search" circle</span><span class="hljs-tag">&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+    <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-button icon="dc-icon-search" circle</span><span class="hljs-tag">&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
     <span class="hljs-tag">&lt;</span><span
     class="hljs-name"
->dc-button type="primary" icon="dl-icon-edit" circle</span><span
+>dc-button type="primary" icon="dc-icon-edit" circle</span><span
     class="hljs-tag"
 >&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
     <span class="hljs-tag">&lt;</span><span
     class="hljs-name"
->dc-button type="success" icon="dl-icon-check" circle</span><span
+>dc-button type="success" icon="dc-icon-check" circle</span><span
     class="hljs-tag"
 >&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
     <span class="hljs-tag">&lt;</span><span
     class="hljs-name"
->dc-button type="info" icon="dl-icon-message" circle</span><span
+>dc-button type="info" icon="dc-icon-message" circle</span><span
     class="hljs-tag"
 >&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
     <span class="hljs-tag">&lt;</span><span
     class="hljs-name"
->dc-button type="warning" icon="dl-icon-star-off" circle</span><span
+>dc-button type="warning" icon="dc-icon-star-off" circle</span><span
     class="hljs-tag"
 >&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
     <span class="hljs-tag">&lt;</span><span
     class="hljs-name"
->dc-button type="danger" icon="dl-icon-delete" circle</span><span
+>dc-button type="danger" icon="dc-icon-delete" circle</span><span
     class="hljs-tag"
 >&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
 <span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-row</span><span class="hljs-tag">&gt;</span>
