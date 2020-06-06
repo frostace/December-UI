@@ -134,10 +134,9 @@ export default {
     white-space: nowrap;
     cursor: pointer;
     color: $--button-default-font-color;
-    -webkit-appearance: none;
+    @include clear-default-appearance;
     text-align: center;
     box-sizing: border-box;
-    outline: none;
     margin: 0;
     margin-left: 10px;
     padding: 12px 20px;
@@ -181,7 +180,9 @@ export default {
 }
 
 .is-circle {
-    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     padding: 12px;
 }
 

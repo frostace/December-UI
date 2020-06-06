@@ -107,3 +107,13 @@
         transform: rotate(360deg);
     }
 }
+
+@mixin clear-default-appearance {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}

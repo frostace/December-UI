@@ -1,5 +1,8 @@
 <template>
     <div>
+        <BackToTop>
+            <font-awesome-icon icon="caret-up" />
+        </BackToTop>
         <h2>Button</h2>
         <p>Commonly used button</p>
         <h3>Basic usage</h3>
@@ -161,6 +164,7 @@ import LoadingButtonCode from "../groups/LoadingButtonCode";
 import SizeButtonGroup from "../groups/SizeButtonGroup";
 import SizeButtonGroupCode from "../groups/SizeButtonGroupCode";
 import DemoBlock from "../components/DemoBlock";
+import BackToTop from "../components/BackToTop";
 export default {
     name: "comp-button",
 
@@ -179,7 +183,8 @@ export default {
         LoadingButtonCode,
         SizeButtonGroup,
         SizeButtonGroupCode,
-        DemoBlock
+        DemoBlock,
+        BackToTop
     }
 };
 </script>
