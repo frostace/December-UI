@@ -143,5 +143,15 @@ export const locale = {
                 },
             ],
         },
+        {
+            sectionName: "",
+            subTitle: "Others",
+            sectionItems: [
+                {
+                    itemName: "Backtop",
+                    itemPath: "/component/backtop",
+                },
+            ],
+        },
     ],
 };

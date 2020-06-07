@@ -1,5 +1,8 @@
 <template>
     <div id="app">
+        <BackToTop>
+            <font-awesome-icon icon="caret-up" />
+        </BackToTop>
         <NavBar ref="navbar" class="navbar" />
         <LeftSidebar
             v-if="
@@ -16,11 +19,13 @@
 <script>
 import NavBar from "./components/NavBar";
 import LeftSidebar from "./components/LeftSidebar";
+import BackToTop from "./components/BackToTop";
 export default {
     name: "App",
     components: {
         NavBar,
-        LeftSidebar
+        LeftSidebar,
+        BackToTop
     },
     computed: {
         // used to dynamically assign class to router-view so that it's not full in guide and component
@@ -96,9 +101,9 @@ html {
     grid-row: 2 / span 1;
 }
 
-.about {
+.subcontent {
     overflow: auto;
     scroll-padding-right: 30px;
-    padding: 0 10vw 0 0;
+    padding: 0 12.5% 0 0;
 }
 </style>

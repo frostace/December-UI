@@ -43,7 +43,6 @@ export default {
     flex-direction: row;
     justify-content: flex-start;
     align-items: left;
-    padding: 24px;
 
     .dc-row {
         display: inline-flex;
@@ -52,6 +51,7 @@ export default {
         justify-content: left;
         align-items: center;
 
+        margin-left: 10px;
         &:not(:last-child) {
             margin-right: 15px;
         }

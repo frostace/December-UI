@@ -73,5 +73,15 @@ export const locale = {
                 },
             ],
         },
+        {
+            sectionName: "",
+            subTitle: "其它",
+            sectionItems: [
+                {
+                    itemName: "返回顶部",
+                    itemPath: "/component/BackToTop",
+                },
+            ],
+        },
     ],
 };

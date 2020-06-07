@@ -1,5 +1,5 @@
 <template>
-    <div class="about">
+    <div class="builtInTransition">
         <h1>This is all about Built-in Transition</h1>
         <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium

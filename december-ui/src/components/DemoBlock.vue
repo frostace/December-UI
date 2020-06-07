@@ -1,10 +1,10 @@
 <template>
     <div class="demo">
         <div class="demo-block">
-            <slot name="demo-component"></slot>
+            <slot name="demo-area"></slot>
         </div>
         <div class="code-block">
-            <slot name="description"></slot>
+            <slot name="description-area"></slot>
             <slot name="code-area"></slot>
             <!-- <div class="description"></div>
                 <pre><div class="code-area"><code class="html">
@@ -45,6 +45,10 @@ export default {
 @import "../assets/var.scss";
 @import "../assets/presets.scss";
 
+.demo {
+    width: auto;
+}
+
 .demo,
 span,
 button {
@@ -55,6 +59,7 @@ button {
     @include default-border-style(#eee);
     border-radius: 4px 4px 0 0;
     border-bottom: none;
+    padding: 24px;
 }
 
 .code-block-control {
@@ -157,6 +162,25 @@ div.code-block-control:hover {
 
     .code-area {
         padding: 12px 24px;
+    }
+}
+
+.description {
+    background-color: white;
+    padding: 16px;
+    margin: 10px;
+    border: {
+        style: solid;
+        color: #eee;
+        width: 1px;
+        radius: 4px;
+    }
+
+    .little-code {
+        background-color: transparentize($color: $--decent-green, $amount: 0.8);
+        border-radius: 2px;
+        padding: 1px 5px;
+        margin: 0 4px;
     }
 }
 </style>

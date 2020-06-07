@@ -180,7 +180,6 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    padding: 24px;
 
     .dc-row {
         display: inline-flex;

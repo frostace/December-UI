@@ -58,6 +58,7 @@ export default {
         }
     },
     mounted() {
+        this.visible = false;
         let backTopButton = this.$el.querySelector("button");
         let subWindow = document.querySelector(".subcontent");
         backTopButton.style.right = this.right + "px";
@@ -84,7 +85,7 @@ button {
     white-space: nowrap;
     box-sizing: border-box;
     margin: 0;
-    padding: 12px;
+    padding: auto;
     cursor: pointer;
     width: 40px;
     height: 40px;

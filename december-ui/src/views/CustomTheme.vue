@@ -1,5 +1,5 @@
 <template>
-    <div class="about">
+    <div class="customTheme">
         <h1>This is all about Custom Theme</h1>
         <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium

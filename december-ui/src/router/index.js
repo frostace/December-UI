@@ -9,8 +9,9 @@ import Internationalization from "../views/Internationalization";
 import CustomTheme from "../views/CustomTheme";
 import BuiltinTransition from "../views/BuiltinTransition";
 // components
-import Layout from "../views/Layout";
+import LayoutView from "../views/LayoutView";
 import ButtonView from "../views/ButtonView";
+import BackTopView from "../views/BackTopView";
 Vue.use(VueRouter);
 
 const routes = [
@@ -64,12 +65,17 @@ const routes = [
             {
                 path: "layout",
                 name: "layout",
-                component: Layout,
+                component: LayoutView,
             },
             {
                 path: "button",
                 name: "button",
                 component: ButtonView,
+            },
+            {
+                path: "backtop",
+                name: "backtop",
+                component: BackTopView,
             },
         ],
     },

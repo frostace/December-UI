@@ -1,17 +1,14 @@
 <template>
     <div>
-        <BackToTop>
-            <font-awesome-icon icon="caret-up" />
-        </BackToTop>
         <h2>Button</h2>
         <p>Commonly used button</p>
         <h3>Basic usage</h3>
         <DemoBlock>
-            <template v-slot:demo-component>
+            <template v-slot:demo-area>
                 <BasicButtonGroup />
             </template>
 
-            <template v-slot:description>
+            <template v-slot:description-area>
                 <div class="description">
                     Use
                     <code class="little-code">type</code>,
@@ -32,11 +29,11 @@
             <code class="little-code">distabled</code> attribute determines if the button is disabled.
         </p>
         <DemoBlock>
-            <template v-slot:demo-component>
+            <template v-slot:demo-area>
                 <DisabledButtonGroup />
             </template>
 
-            <template v-slot:description>
+            <template v-slot:description-area>
                 <div class="description">
                     Use
                     <code class="little-code">distabled</code>
@@ -55,11 +52,11 @@
         <h3>Text Button</h3>
         <p>Buttons without border and background.</p>
         <DemoBlock>
-            <template v-slot:demo-component>
+            <template v-slot:demo-area>
                 <TextButtonGroup />
             </template>
 
-            <template v-slot:description></template>
+            <template v-slot:description-area></template>
             <template v-slot:code-area>
                 <TextButtonGroupCode />
             </template>
@@ -68,11 +65,11 @@
         <h3>Icon Button</h3>
         <p>Use icons to add more meaning to Button. You can use icon alone to save some space, or use it with text.</p>
         <DemoBlock>
-            <template v-slot:demo-component>
+            <template v-slot:demo-area>
                 <IconButtonGroup />
             </template>
 
-            <template v-slot:description>
+            <template v-slot:description-area>
                 <div class="description">
                     Use the
                     <code class="little-code">icon</code>
@@ -90,11 +87,11 @@
         <h3>Button Group</h3>
         <p>Displayed as a button group, can be used to group a series of similar operations.</p>
         <DemoBlock>
-            <template v-slot:demo-component>
+            <template v-slot:demo-area>
                 <ButtonGroup />
             </template>
 
-            <template v-slot:description>
+            <template v-slot:description-area>
                 <div class="description">
                     Use tag
                     <code class="little-code">&lt;el-button-group&gt;</code> to group your buttons.
@@ -108,11 +105,11 @@
         <h3>Loading Button</h3>
         <p>Click the button to load data, then the button displays a loading state.</p>
         <DemoBlock>
-            <template v-slot:demo-component>
+            <template v-slot:demo-area>
                 <LoadingButton />
             </template>
 
-            <template v-slot:description>
+            <template v-slot:description-area>
                 <div class="description">
                     Set
                     <code class="little-code">loading</code> attribute to
@@ -127,11 +124,11 @@
         <h3>Sizes</h3>
         <p>Besides default size, Button component provides three additional sizes for you to choose among different scenarios.</p>
         <DemoBlock>
-            <template v-slot:demo-component>
+            <template v-slot:demo-area>
                 <SizeButtonGroup />
             </template>
 
-            <template v-slot:description>
+            <template v-slot:description-area>
                 <div class="description">
                     Use attribute
                     <code class="little-code">size</code> to set additional sizes with
@@ -164,7 +161,6 @@ import LoadingButtonCode from "../groups/LoadingButtonCode";
 import SizeButtonGroup from "../groups/SizeButtonGroup";
 import SizeButtonGroupCode from "../groups/SizeButtonGroupCode";
 import DemoBlock from "../components/DemoBlock";
-import BackToTop from "../components/BackToTop";
 export default {
     name: "comp-button",
 
@@ -183,31 +179,10 @@ export default {
         LoadingButtonCode,
         SizeButtonGroup,
         SizeButtonGroupCode,
-        DemoBlock,
-        BackToTop
+        DemoBlock
     }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/var.scss";
-
-.description {
-    background-color: white;
-    padding: 16px;
-    margin: 10px;
-    border: {
-        style: solid;
-        color: #eee;
-        width: 1px;
-        radius: 4px;
-    }
-
-    .little-code {
-        background-color: transparentize($color: $--decent-green, $amount: 0.8);
-        border-radius: 2px;
-        padding: 1px 5px;
-        margin: 0 4px;
-    }
-}
 </style>

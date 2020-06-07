@@ -1,5 +1,5 @@
 <template>
-    <div class="about">
+    <div class="installation">
         <h2>Installation</h2>
         <h3 id="npm">npm</h3>
         <p>

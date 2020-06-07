@@ -1,5 +1,5 @@
 <template>
-    <div class="about">
+    <div class="i18n">
         <h1>This is all about i18n</h1>
         <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium
