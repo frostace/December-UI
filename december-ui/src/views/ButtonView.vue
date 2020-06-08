@@ -142,6 +142,9 @@
                 <SizeButtonGroupCode />
             </template>
         </DemoBlock>
+
+        <h3>Attributes</h3>
+        <Table :heads="heads" :rows="rows" />
     </div>
 </template>
 
@@ -161,9 +164,86 @@ import LoadingButtonCode from "../groups/LoadingButtonCode";
 import SizeButtonGroup from "../groups/SizeButtonGroup";
 import SizeButtonGroupCode from "../groups/SizeButtonGroupCode";
 import DemoBlock from "../components/DemoBlock";
+import Table from "../components/Table";
 export default {
     name: "comp-button",
-
+    data() {
+        return {
+            heads: [
+                "Attribute",
+                "Description",
+                "Type",
+                "Accepted Values",
+                "Default"
+            ],
+            rows: {
+                row1: [
+                    "size",
+                    "button size",
+                    "string",
+                    "medium / small / mini",
+                    "—"
+                ],
+                row2: [
+                    "type",
+                    "button type",
+                    "string",
+                    "primary / success / warning / danger / info / text",
+                    "—"
+                ],
+                row3: [
+                    "plain",
+                    "determine whether it's a plain button",
+                    "boolean",
+                    "—",
+                    "false"
+                ],
+                row4: [
+                    "round",
+                    "determine whether it's a round button",
+                    "boolean",
+                    "—",
+                    "false"
+                ],
+                row5: [
+                    "circle",
+                    "determine whether it's a circle button",
+                    "boolean",
+                    "—",
+                    "false"
+                ],
+                row6: [
+                    "loading",
+                    "determine whether it's loading",
+                    "boolean",
+                    "—",
+                    "false"
+                ],
+                row7: [
+                    "disabled",
+                    "disable the button",
+                    "boolean",
+                    "—",
+                    "false"
+                ],
+                row8: ["icon", "icon class name", "string", "—", "—"],
+                row9: [
+                    "autofocus",
+                    "same as native button's autofocus",
+                    "boolean",
+                    "—",
+                    "false"
+                ],
+                row10: [
+                    "native-type",
+                    "same as native button's type",
+                    "string",
+                    "button / submit / reset",
+                    "button"
+                ]
+            }
+        };
+    },
     components: {
         BasicButtonGroup,
         BasicButtonGroupCode,
@@ -179,7 +259,13 @@ export default {
         LoadingButtonCode,
         SizeButtonGroup,
         SizeButtonGroupCode,
-        DemoBlock
+        DemoBlock,
+        Table
+    },
+    mounted() {
+        // make scroll window back to TOP on switching router pages
+        let subWindow = document.querySelector(".subcontent");
+        subWindow.scrollTo(0, 0);
     }
 };
 </script>

@@ -59,6 +59,7 @@ export default {
     },
     mounted() {
         this.visible = false;
+        console.log(this.visible);
         let backTopButton = this.$el.querySelector("button");
         let subWindow = document.querySelector(".subcontent");
         backTopButton.style.right = this.right + "px";

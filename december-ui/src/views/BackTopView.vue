@@ -71,15 +71,17 @@ export default {
         BackTopCode,
         Table,
         BackToTop
+    },
+    mounted() {
+        // TODO: make this behavior a general one
+        // make scroll window back to TOP on switching router pages
+        let subWindow = document.querySelector(".subcontent");
+        subWindow.scrollTo(0, 0);
     }
 };
 </script>
 
 <style lang="scss" scoped>
-div > h3 {
-    margin-top: 55px;
-}
-
 .demo-block p {
     margin: 0;
 }

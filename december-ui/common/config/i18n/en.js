@@ -43,34 +43,34 @@ export const locale = {
                     itemName: "Layout",
                     itemPath: "/component/layout",
                 },
-                {
-                    itemName: "Layout Container",
-                    itemPath: "/component/layoutcontainer",
-                },
-                {
-                    itemName: "Color",
-                    itemPath: "/component/color",
-                },
-                {
-                    itemName: "Typography",
-                    itemPath: "/component/typography",
-                },
-                {
-                    itemName: "Border",
-                    itemPath: "/component/border",
-                },
-                {
-                    itemName: "Icon",
-                    itemPath: "/component/icon",
-                },
+                // {
+                //     itemName: "Layout Container",
+                //     itemPath: "/component/layoutcontainer",
+                // },
+                // {
+                //     itemName: "Color",
+                //     itemPath: "/component/color",
+                // },
+                // {
+                //     itemName: "Typography",
+                //     itemPath: "/component/typography",
+                // },
+                // {
+                //     itemName: "Border",
+                //     itemPath: "/component/border",
+                // },
+                // {
+                //     itemName: "Icon",
+                //     itemPath: "/component/icon",
+                // },
                 {
                     itemName: "Button",
                     itemPath: "/component/button",
                 },
-                {
-                    itemName: "Link",
-                    itemPath: "/component/link",
-                },
+                // {
+                //     itemName: "Link",
+                //     itemPath: "/component/link",
+                // },
             ],
         },
         {
@@ -81,66 +81,66 @@ export const locale = {
                     itemName: "Radio",
                     itemPath: "/component/radio",
                 },
-                {
-                    itemName: "Checkbox",
-                    itemPath: "/component/checkbox",
-                },
-                {
-                    itemName: "Input",
-                    itemPath: "/component/input",
-                },
-                {
-                    itemName: "InputNumber",
-                    itemPath: "/component/inputnumber",
-                },
-                {
-                    itemName: "Select",
-                    itemPath: "/component/select",
-                },
-                {
-                    itemName: "Cascader",
-                    itemPath: "/component/cascader",
-                },
-                {
-                    itemName: "Switch",
-                    itemPath: "/component/switch",
-                },
+                // {
+                //     itemName: "Checkbox",
+                //     itemPath: "/component/checkbox",
+                // },
+                // {
+                //     itemName: "Input",
+                //     itemPath: "/component/input",
+                // },
+                // {
+                //     itemName: "InputNumber",
+                //     itemPath: "/component/inputnumber",
+                // },
+                // {
+                //     itemName: "Select",
+                //     itemPath: "/component/select",
+                // },
+                // {
+                //     itemName: "Cascader",
+                //     itemPath: "/component/cascader",
+                // },
+                // {
+                //     itemName: "Switch",
+                //     itemPath: "/component/switch",
+                // },
                 {
                     itemName: "Slider",
                     itemPath: "/component/slider",
                 },
-                {
-                    itemName: "TimePicker",
-                    itemPath: "/component/timepicker",
-                },
-                {
-                    itemName: "DatePicker",
-                    itemPath: "/component/datepicker",
-                },
-                {
-                    itemName: "DateTimePicker",
-                    itemPath: "/component/datetimepicker",
-                },
-                {
-                    itemName: "Upload",
-                    itemPath: "/component/upload",
-                },
-                {
-                    itemName: "Rate",
-                    itemPath: "/component/rate",
-                },
-                {
-                    itemName: "ColorPicker",
-                    itemPath: "/component/colorpicker",
-                },
-                {
-                    itemName: "Transfer",
-                    itemPath: "/component/transfer",
-                },
-                {
-                    itemName: "Form",
-                    itemPath: "/component/form",
-                },
+                // {
+                //     itemName: "TimePicker",
+                //     itemPath: "/component/timepicker",
+                // },
+                // {
+                //     itemName: "DatePicker",
+                //     itemPath: "/component/datepicker",
+                // },
+                // {
+                //     itemName: "DateTimePicker",
+                //     itemPath: "/component/datetimepicker",
+                // },
+                // {
+                //     itemName: "Upload",
+                //     itemPath: "/component/upload",
+                // },
+                // {
+                //     itemName: "Rate",
+                //     itemPath: "/component/rate",
+                // },
+                // {
+                //     itemName: "ColorPicker",
+                //     itemPath: "/component/colorpicker",
+                // },
+                // {
+                //     itemName: "Transfer",
+                //     itemPath: "/component/transfer",
+                // },
+                // {
+                //     itemName: "Form",
+                //     itemPath: "/component/form",
+                // },
             ],
         },
         {

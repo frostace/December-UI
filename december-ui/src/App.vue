@@ -67,6 +67,7 @@ $font-color: #2c3e50;
 html {
     overflow: hidden;
 }
+
 #app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -105,5 +106,13 @@ html {
     overflow: auto;
     scroll-padding-right: 30px;
     padding: 0 12.5% 0 0;
+}
+
+div > h3 {
+    margin-top: 55px;
+}
+
+div > p {
+    font-size: 14px;
 }
 </style>

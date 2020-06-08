@@ -11,6 +11,8 @@ import BuiltinTransition from "../views/BuiltinTransition";
 // components
 import LayoutView from "../views/LayoutView";
 import ButtonView from "../views/ButtonView";
+import RadioView from "../views/RadioView";
+import SliderView from "../views/SliderView";
 import BackTopView from "../views/BackTopView";
 Vue.use(VueRouter);
 
@@ -71,6 +73,16 @@ const routes = [
                 path: "button",
                 name: "button",
                 component: ButtonView,
+            },
+            {
+                path: "radio",
+                name: "radio",
+                component: RadioView,
+            },
+            {
+                path: "slider",
+                name: "slider",
+                component: SliderView,
             },
             {
                 path: "backtop",

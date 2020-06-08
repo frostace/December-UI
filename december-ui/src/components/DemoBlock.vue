@@ -12,7 +12,7 @@
         </div>
         <div class="code-block-control" @click="toggleCodeBlock">
             <div class="expand-control">
-                <font-awesome-icon :icon="arrowIconName" size="x" />
+                <font-awesome-icon :icon="arrowIconName" size="1x" />
                 <span>{{expandState}}</span>
             </div>
             <button>Try It!</button>

@@ -51,6 +51,7 @@ table {
         &:first-child {
             padding-left: 10px;
         }
+        border-bottom: 1px solid #dcdfe6;
     }
     td {
         border-bottom: 1px solid #dcdfe6;

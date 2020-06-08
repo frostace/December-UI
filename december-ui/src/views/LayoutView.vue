@@ -74,6 +74,8 @@
             <h3>{{table.name}}</h3>
             <Table :heads="table.heads" :rows="table.rows" />
         </div>
+
+        <!-- TODO: add responsive layout -->
     </div>
 </template>
 
@@ -192,12 +194,14 @@ export default {
         CustomOffsetLayoutGroupCode,
         AlignmentLayoutGroup,
         AlignmentLayoutGroupCode
+    },
+    mounted() {
+        // make scroll window back to TOP on switching router pages
+        let subWindow = document.querySelector(".subcontent");
+        subWindow.scrollTo(0, 0);
     }
 };
 </script>
 
 <style lang="scss" scoped>
-div > h3 {
-    margin-top: 55px;
-}
 </style>
