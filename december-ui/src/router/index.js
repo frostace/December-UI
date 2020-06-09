@@ -12,6 +12,7 @@ import BuiltinTransition from "../views/BuiltinTransition";
 import LayoutView from "../views/LayoutView";
 import ButtonView from "../views/ButtonView";
 import RadioView from "../views/RadioView";
+import CheckboxView from "../views/CheckboxView";
 import SliderView from "../views/SliderView";
 import BackTopView from "../views/BackTopView";
 Vue.use(VueRouter);
@@ -78,6 +79,11 @@ const routes = [
                 path: "radio",
                 name: "radio",
                 component: RadioView,
+            },
+            {
+                path: "checkbox",
+                name: "checkbox",
+                component: CheckboxView,
             },
             {
                 path: "slider",
