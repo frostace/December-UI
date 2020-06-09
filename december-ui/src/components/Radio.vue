@@ -159,7 +159,7 @@ export default {
 
     // hide the real input radio
     input[type="radio"] {
-        @include clear-default-appearance;
+        @include clear-default-appearance-all;
     }
     span {
         @include decent-transition(0.05s);

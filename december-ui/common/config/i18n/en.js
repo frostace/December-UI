@@ -81,10 +81,10 @@ export const locale = {
                     itemName: "Radio",
                     itemPath: "/component/radio",
                 },
-                // {
-                //     itemName: "Checkbox",
-                //     itemPath: "/component/checkbox",
-                // },
+                {
+                    itemName: "Checkbox",
+                    itemPath: "/component/checkbox",
+                },
                 // {
                 //     itemName: "Input",
                 //     itemPath: "/component/input",

@@ -77,7 +77,7 @@ export default {
 button {
     position: absolute;
     z-index: 100;
-    @include clear-default-appearance;
+    @include clear-default-appearance-all;
     @include decent-shadow;
     background-color: #fff;
     color: $--primary-color;

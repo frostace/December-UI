@@ -134,7 +134,7 @@ export default {
     white-space: nowrap;
     cursor: pointer;
     color: $--button-default-font-color;
-    @include clear-default-appearance;
+    @include clear-default-appearance-all;
     text-align: center;
     box-sizing: border-box;
     margin: 0;

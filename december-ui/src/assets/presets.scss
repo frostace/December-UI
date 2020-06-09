@@ -114,6 +114,13 @@
     -ms-appearance: none;
     -o-appearance: none;
     appearance: none;
+}
+@mixin clear-default-appearance-all {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
     outline: none;
     border: none;
 }
