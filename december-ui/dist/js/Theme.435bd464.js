@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["Theme"],{de93:function(e,t,n){"use strict";n.r(t);var s=function(){var e=this,t=e.$createElement;e._self._c;return e._m(0)},a=[function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"theme"},[n("h1",[e._v("This is a Theme page")])])}],c={components:{}},i=c,l=n("2877"),r=Object(l["a"])(i,s,a,!1,null,null,null);t["default"]=r.exports}}]);
-//# sourceMappingURL=Theme.fcb94629.js.map
+//# sourceMappingURL=Theme.435bd464.js.map

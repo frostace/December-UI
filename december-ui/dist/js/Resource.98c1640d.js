@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["Resource"],{eff4:function(e,s,t){"use strict";t.r(s);var n=function(){var e=this,s=e.$createElement;e._self._c;return e._m(0)},r=[function(){var e=this,s=e.$createElement,t=e._self._c||s;return t("div",{staticClass:"resource"},[t("h1",[e._v("This is a Resource page")])])}],c=t("2877"),u={},a=Object(c["a"])(u,n,r,!1,null,null,null);s["default"]=a.exports}}]);
-//# sourceMappingURL=Resource.cce2f5e2.js.map
+//# sourceMappingURL=Resource.98c1640d.js.map
