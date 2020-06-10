@@ -1,6 +1,6 @@
 <template>
     <pre><div class="code-area"><code class="html">
-<span class="hljs-tag">&lt;</span><span class="hljs-name">dc-checkbox-group vimodel="checkList""</span><span class="hljs-tag">&gt;</span>
+<span class="hljs-tag">&lt;</span><span class="hljs-name">dc-checkbox-group v-model="checkList""</span><span class="hljs-tag">&gt;</span>
     <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-checkbox label="Option A"</span><span class="hljs-tag">&gt;</span>Option<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-checkbox</span><span class="hljs-tag">&gt;</span>
     <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-checkbox label="Option B"</span><span class="hljs-tag">&gt;</span>Option<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-checkbox</span><span class="hljs-tag">&gt;</span>
     <span class="hljs-tag">&lt;</span><span class="hljs-name">dc-checkbox label="Option C"</span><span class="hljs-tag">&gt;</span>Option<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-checkbox</span><span class="hljs-tag">&gt;</span>

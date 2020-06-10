@@ -19,6 +19,7 @@ import {
     faCloudUploadAlt,
     faShareAlt,
     faSpinner,
+    faMinus,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 // add code block lib
@@ -41,7 +42,8 @@ library.add(
     faTrashAlt,
     faCloudUploadAlt,
     faShareAlt,
-    faSpinner
+    faSpinner,
+    faMinus
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

@@ -50,7 +50,7 @@
             </template>
         </DemoBlock>
 
-        <h3>Chexkbox group</h3>
+        <h3>Checkbox group</h3>
         <p>It is used for multiple checkboxes which are bound in one group, and indicates whether one option is selected by checking if it is checked.</p>
 
         <DemoBlock>
@@ -79,14 +79,43 @@
 
         <DemoBlock>
             <template v-slot:demo-area>
-                <dc-checkbox>Check all</dc-checkbox>
-                <dc-checkbox-group v-model="checkList" style="display: flex; flex-direction: row">
-                    <dc-checkbox label></dc-checkbox>
+                <dc-checkbox
+                    :indeterminate="isIndeterminate"
+                    v-model="checkAll"
+                    @change="handleCheckAllChange"
+                >Check all</dc-checkbox>
+                <div style="margin: 15px 0;"></div>
+                <dc-checkbox-group
+                    v-model="checkedCities"
+                    style="display: flex; flex-direction: row"
+                    @change="handleCheckedCitiesChange"
+                >
+                    <dc-checkbox :key="idx" v-for="(city, idx) in cities" :label="city">{{city}}</dc-checkbox>
                 </dc-checkbox-group>
             </template>
             <template v-slot:description-area></template>
             <template v-slot:code-area>
                 <IndeterminateCheckboxGroupCode />
+            </template>
+        </DemoBlock>
+
+        <h3>Minimum / Maximum items checked</h3>
+        <p>The min and max properties can help you to limit the number of checked items.</p>
+
+        <DemoBlock>
+            <template v-slot:demo-area>
+                <dc-checkbox-group
+                    v-model="checkedCities2"
+                    :min="1"
+                    :max="2"
+                    style="display: flex; flex-direction: row"
+                >
+                    <dc-checkbox :key="idx" v-for="(city, idx) in cities" :label="city">{{city}}</dc-checkbox>
+                </dc-checkbox-group>
+            </template>
+            <template v-slot:description-area></template>
+            <template v-slot:code-area>
+                <MinMaxCheckboxGroupCode />
             </template>
         </DemoBlock>
 
@@ -101,18 +130,56 @@ import dcCheckboxGroup from "../components/CheckboxGroup";
 import BasicCheckboxCode from "../groups/BasicCheckboxCode";
 import DisabledCheckboxCode from "../groups/DisabledCheckboxCode";
 import IndeterminateCheckboxGroupCode from "../groups/IndeterminateCheckboxGroupCode";
+import MinMaxCheckboxGroupCode from "../groups/MinMaxCheckboxGroupCode";
 import CheckboxGroupCode from "../groups/CheckboxGroupCode";
 
 import DemoBlock from "../components/DemoBlock";
 import Table from "../components/Table";
+const cityOptions = ["Shanghai", "Beijing", "Guangzhou", "Shenzhen"];
+// const cityOptions = {
+//     Shanghai: true,
+//     Beijing: true,
+//     Guangzhou: true,
+//     Shenzhen: true
+// };
 export default {
     data() {
         return {
             checked: true,
             checked2: true,
             checked3: false,
-            checkList: { "selected and disabled": true, "Option A": true }
+            checkList: ["selected and disabled", "Option A"],
+            cities: cityOptions,
+            isIndeterminate: true,
+            checkAll: false,
+            checkedCities: ["Shanghai", "Beijing"],
+            checkedCities2: ["Shanghai", "Beijing"]
         };
+    },
+    methods: {
+        handleCheckAllChange(val) {
+            // console.log(val, 123);
+            if (val) {
+                // use this.$set to force inform child component that the prop is updated
+                // console.log(cityOptions);
+                this.checkedCities.splice(cityOptions.length);
+                cityOptions.forEach((city, idx) =>
+                    this.$set(this.checkedCities, idx, city)
+                );
+            } else {
+                this.checkedCities.splice(0);
+            }
+            this.isIndeterminate = false;
+        },
+        handleCheckedCitiesChange(newCheckedCities) {
+            // console.log(newCheckedCities);
+            let checkedCount = newCheckedCities.length;
+            this.checkAll = checkedCount === this.cities.length;
+            this.isIndeterminate =
+                checkedCount > 0 && checkedCount < this.cities.length;
+            // console.log(checkedCount, this.cities.length);
+            // console.log(this.checkAll);
+        }
     },
     components: {
         dcCheckbox,
@@ -121,6 +188,7 @@ export default {
         DisabledCheckboxCode,
         CheckboxGroupCode,
         IndeterminateCheckboxGroupCode,
+        MinMaxCheckboxGroupCode,
         DemoBlock,
         Table
     }
