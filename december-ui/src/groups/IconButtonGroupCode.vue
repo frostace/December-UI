@@ -4,17 +4,17 @@
     class="hljs-name"
 >dc-button type="primary" icon="dc-icon-edit"</span><span
     class="hljs-tag"
->&gt;</span>Default<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+>&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
 <span class="hljs-tag">&lt;</span><span
     class="hljs-name"
 >dc-button type="primary" icon="dc-icon-share"</span><span
     class="hljs-tag"
->&gt;</span>Default<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+>&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
 <span class="hljs-tag">&lt;</span><span
     class="hljs-name"
 >dc-button type="primary" icon="dc-icon-delete"</span><span
     class="hljs-tag"
->&gt;</span>Default<span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
+>&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 
 <span class="hljs-tag">&lt;</span><span
     class="hljs-name"
 >dc-button type="primary" icon="dc-icon-search"</span>Search<span class="hljs-tag">&gt;</span><span class="hljs-tag">&lt;</span><span class="hljs-name">/dc-button</span><span class="hljs-tag">&gt;</span> 

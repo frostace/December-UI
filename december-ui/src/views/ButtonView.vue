@@ -156,7 +156,7 @@ import DisabledButtonGroupCode from "../groups/DisabledButtonGroupCode";
 import TextButtonGroup from "../groups/TextButtonGroup";
 import TextButtonGroupCode from "../groups/TextButtonGroupCode";
 import IconButtonGroup from "../groups/IconButtonGroup";
-import IconButtonGroupCode from "../groups/IconButtonGroup";
+import IconButtonGroupCode from "../groups/IconButtonGroupCode";
 import ButtonGroup from "../groups/ButtonGroup";
 import ButtonGroupCode from "../groups/ButtonGroupCode";
 import LoadingButton from "../groups/LoadingButton";
