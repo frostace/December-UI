@@ -28,7 +28,7 @@ export default {
         },
         right: {
             type: Number,
-            default: 40
+            default: 60
         },
         bottom: {
             type: Number,

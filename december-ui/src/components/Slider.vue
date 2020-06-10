@@ -44,35 +44,35 @@ export default {
         // this is init value (external)
         value: {
             type: Number,
-            default: 0,
+            default: 0
         },
         sliderID: {
             type: String,
-            default: "vol",
+            default: "vol"
         },
         disabled: Boolean,
         showTooltip: {
             type: Boolean,
-            default: true,
+            default: true
         },
         formatTooltip: {
             type: Function,
-            default: (val) => val,
+            default: val => val
         },
         step: {
             type: Number,
-            default: 1,
+            default: 1
         },
         showStops: {
             type: Boolean,
-            default: false,
-        },
+            default: false
+        }
     },
     data() {
         return {
             // this is slider value (internal)
             sliderValue: this.value,
-            dragging: false,
+            dragging: false
         };
     },
     watch: {},
@@ -84,7 +84,7 @@ export default {
             return Array(Math.floor(100 / this.step) - 1)
                 .fill(null)
                 .map((_, i) => (i + 1) * this.step);
-        },
+        }
     },
     methods: {
         handleChange(evt) {
@@ -103,15 +103,15 @@ export default {
             let sliderBar = this.$el.querySelector(".dc-slider-button-shadow");
             let valueSticker = this.$el.querySelector(".dc-slider-tooltip");
             createPopper(sliderBar, valueSticker, { placement: "top" });
-        },
+        }
     },
     mounted() {
         this.sliderValue = this.value;
         this.$el.querySelector(".dc-slider-button-shadow").style.left =
             this.value * 0.98 - (this.value - 35) / 50 + "%";
         this.setupPopperLocation();
-        console.log(this.stopPositions);
-    },
+        // console.log(this.stopPositions);
+    }
 };
 </script>
 
@@ -144,7 +144,7 @@ export default {
         .tooltip-value {
             min-width: 20px;
             height: 20px;
-            padding: 4px;
+            padding: 4px 10px;
             border-radius: 4px;
             text-align: center;
             background-color: $--decent-gray;

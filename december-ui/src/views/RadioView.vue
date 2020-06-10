@@ -333,6 +333,10 @@ export default {
         BorderedRadioGroupCode,
         DemoBlock,
         Table
+    },
+    mounted() {
+        let subWindow = document.querySelector(".subcontent");
+        subWindow.scrollTo(0, 0);
     }
 };
 </script>

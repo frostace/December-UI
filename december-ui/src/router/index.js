@@ -13,6 +13,7 @@ import LayoutView from "../views/LayoutView";
 import ButtonView from "../views/ButtonView";
 import RadioView from "../views/RadioView";
 import CheckboxView from "../views/CheckboxView";
+import SwitchView from "../views/SwitchView";
 import SliderView from "../views/SliderView";
 import BackTopView from "../views/BackTopView";
 Vue.use(VueRouter);
@@ -84,6 +85,11 @@ const routes = [
                 path: "checkbox",
                 name: "checkbox",
                 component: CheckboxView,
+            },
+            {
+                path: "switch",
+                name: "switch",
+                component: SwitchView,
             },
             {
                 path: "slider",

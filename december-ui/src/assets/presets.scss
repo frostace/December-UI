@@ -124,3 +124,11 @@
     outline: none;
     border: none;
 }
+
+@mixin x-browser-transformXY($x-offset, $y-offset) {
+    transform: translateX($x-offset) translateY($y-offset);
+    -o-transform: translateX($x-offset) translateY($y-offset);
+    -ms-transform: translateX($x-offset) translateY($y-offset);
+    -moz-transform: translateX($x-offset) translateY($y-offset);
+    -webkit-transform: translateX($x-offset) translateY($y-offset);
+}

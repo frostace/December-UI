@@ -33,7 +33,9 @@
                     Set step size with the
                     <code class="little-code">step</code> attribute. You can
                     display breakpoints by setting the
-                    <code class="little-code">show-stops</code> attribute.
+                    <code
+                        class="little-code"
+                    >show-stops</code> attribute.
                 </div>
             </template>
             <template v-slot:code-area>
@@ -66,7 +68,7 @@ export default {
                         "Description",
                         "Type",
                         "Accepted Values",
-                        "Default",
+                        "Default"
                     ],
                     rows: {
                         row1: [
@@ -74,12 +76,12 @@ export default {
                             "binding value",
                             "number",
                             "-",
-                            "0",
+                            "0"
                         ],
-                        row2: ["-", "-", "-", "-", "-"],
-                    },
-                },
-            ],
+                        row2: ["-", "-", "-", "-", "-"]
+                    }
+                }
+            ]
         };
     },
     components: {
@@ -88,8 +90,12 @@ export default {
         DiscreteSliderGroup,
         DiscreteSliderGroupCode,
         DemoBlock,
-        Table,
+        Table
     },
+    mounted() {
+        let subWindow = document.querySelector(".subcontent");
+        subWindow.scrollTo(0, 0);
+    }
 };
 </script>
 

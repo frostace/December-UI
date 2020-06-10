@@ -101,10 +101,10 @@ export const locale = {
                 //     itemName: "Cascader",
                 //     itemPath: "/component/cascader",
                 // },
-                // {
-                //     itemName: "Switch",
-                //     itemPath: "/component/switch",
-                // },
+                {
+                    itemName: "Switch",
+                    itemPath: "/component/switch",
+                },
                 {
                     itemName: "Slider",
                     itemPath: "/component/slider",
