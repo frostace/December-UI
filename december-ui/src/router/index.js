@@ -21,6 +21,7 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: "/",
+        redirect: "/component/layout",
         name: "welcome",
         component: Welcome,
     },

@@ -28,7 +28,8 @@
             </div>
         </div>
         <!-- Component Items -->
-        <SearchBox v-if="currentPage.includes('component') ? true : false" />
+
+        <!-- <SearchBox v-if="currentPage.includes('component') ? true : false" /> -->
         <div class="componentSidebar" v-if="currentPage.includes('component') ? true : false">
             <div
                 v-bind:key="index"
@@ -62,11 +63,13 @@
 </template>
 
 <script>
-import SearchBox from "./SearchBox";
+// import SearchBox from "./SearchBox";
 
 export default {
     name: "sidebar",
-    components: { SearchBox },
+    components: {
+        /* SearchBox */
+    },
     data() {
         return {};
     },

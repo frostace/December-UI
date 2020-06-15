@@ -51,6 +51,7 @@ $borderWidth: 1px;
     text-align: left;
     .textInput {
         height: 1.2rem;
+        width: 100px;
         padding: 0 10px;
         @extend %border-style;
         border-color: #ccc;

@@ -4,10 +4,10 @@
             <span class="slider-type">Breakpoints not displayed</span>
             <dc-slider v-model="value1" :step="10" />
         </div>
-        <div class="block">
+        <!-- <div class="block">
             <span class="slider-type">Breakpoints displayed</span>
             <dc-slider v-model="value2" :step="10" show-stops />
-        </div>
+        </div>-->
     </div>
 </template>
 
@@ -20,17 +20,17 @@ export default {
             value2: 50,
             value3: 36,
             value4: 48,
-            value5: 42,
+            value5: 42
         };
     },
     methods: {
         formatTooltip(val) {
             return val / 100;
-        },
+        }
     },
     components: {
-        dcSlider,
-    },
+        dcSlider
+    }
 };
 </script>
 
