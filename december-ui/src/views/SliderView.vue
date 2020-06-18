@@ -78,7 +78,37 @@ export default {
                             "-",
                             "0"
                         ],
-                        row2: ["-", "-", "-", "-", "-"]
+                        row2: ["min", "minimum value", "number", "-", "0"],
+                        row3: ["max", "maximum value", "number", "-", "100"],
+                        row4: [
+                            "disabled",
+                            "whether Slider is disabled",
+                            "boolean",
+                            "-",
+                            "false"
+                        ],
+                        row5: ["step", "step size", "number", "-", "1"],
+                        row6: [
+                            "show-stop",
+                            "whether to display breakpoints",
+                            "boolean",
+                            "-",
+                            "false"
+                        ],
+                        row7: [
+                            "show-tooltip",
+                            "whether to display tooltip value",
+                            "boolean",
+                            "-",
+                            "true"
+                        ],
+                        row8: [
+                            "format-tooltip",
+                            "format to display tooltip value",
+                            "function(value)",
+                            "-",
+                            "-"
+                        ]
                     }
                 }
             ]

@@ -132,6 +132,16 @@ export default {
         cursor: pointer;
     }
 
+    &.is-disabled {
+        .slider {
+            cursor: not-allowed;
+        }
+
+        .slider::-webkit-slider-thumb {
+            cursor: not-allowed;
+        }
+    }
+
     // tooltip box and value
     span.dc-slider-tooltip {
         position: absolute;
