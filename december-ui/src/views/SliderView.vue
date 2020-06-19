@@ -1,11 +1,10 @@
 <template>
     <div>
-        <h2>Slider</h2>
-        <p>Drag the slider within a fixed range.</p>
+        <h2>{{$t('sliderView.title')}}</h2>
+        <p>{{$t('sliderView.intro')}}</p>
 
-        <h3>Basic usage</h3>
-        <p>The current value is displayed when the slider is being dragged.</p>
-
+        <h3>{{$t('sliderView.basic.name')}}</h3>
+        <p>{{$t('sliderView.basic.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <BasicSliderGroup />
@@ -21,9 +20,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Discrete values</h3>
-        <p>The options can be discrete.</p>
-
+        <h3>{{$t('sliderView.discrete.name')}}</h3>
+        <p>{{$t('sliderView.discrete.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <DiscreteSliderGroup />
@@ -43,7 +41,7 @@
             </template>
         </DemoBlock>
 
-        <div :key="idx" v-for="(table, idx) in tables">
+        <div :key="idx" v-for="(table, idx) in $t('sliderView.tables')">
             <h3>{{ table.name }}</h3>
             <Table :heads="table.heads" :rows="table.rows" />
         </div>
@@ -59,60 +57,7 @@ import DemoBlock from "../components/DemoBlock";
 import Table from "../components/Table";
 export default {
     data() {
-        return {
-            tables: [
-                {
-                    name: "Attributes",
-                    heads: [
-                        "Attribute",
-                        "Description",
-                        "Type",
-                        "Accepted Values",
-                        "Default"
-                    ],
-                    rows: {
-                        row1: [
-                            "value / v-model",
-                            "binding value",
-                            "number",
-                            "-",
-                            "0"
-                        ],
-                        row2: ["min", "minimum value", "number", "-", "0"],
-                        row3: ["max", "maximum value", "number", "-", "100"],
-                        row4: [
-                            "disabled",
-                            "whether Slider is disabled",
-                            "boolean",
-                            "-",
-                            "false"
-                        ],
-                        row5: ["step", "step size", "number", "-", "1"],
-                        row6: [
-                            "show-stop",
-                            "whether to display breakpoints",
-                            "boolean",
-                            "-",
-                            "false"
-                        ],
-                        row7: [
-                            "show-tooltip",
-                            "whether to display tooltip value",
-                            "boolean",
-                            "-",
-                            "true"
-                        ],
-                        row8: [
-                            "format-tooltip",
-                            "format to display tooltip value",
-                            "function(value)",
-                            "-",
-                            "-"
-                        ]
-                    }
-                }
-            ]
-        };
+        return {};
     },
     components: {
         BasicSliderGroup,

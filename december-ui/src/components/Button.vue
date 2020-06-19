@@ -18,8 +18,6 @@
         ]"
     >
         <font-awesome-icon class="dc-icon-loading" icon="spinner" v-if="loading" />
-        <!-- <i class="dc-icon-loading" v-if="loading"></i> -->
-        <!-- <i :class="icon" v-if="icon && !loading"></i> -->
         <span v-if="$slots.default">
             <slot></slot>
         </span>
@@ -168,13 +166,13 @@ export default {
     &--small {
         width: 55px;
         height: 30px;
-        padding: 8px 13px;
+        padding: 6px 13px;
         font-size: 10px;
     }
     &--mini {
         width: 45px;
         height: 25px;
-        padding: 6px 10px;
+        padding: 4px 10px;
         font-size: 10px;
     }
 }
@@ -188,5 +186,9 @@ export default {
 
 .dc-icon-loading {
     @include rotate-forever;
+}
+
+.dc-icon-loading ~ span {
+    margin-left: 5px;
 }
 </style>

@@ -11,10 +11,11 @@
                 <font-awesome-icon icon="trash-alt" />
             </dc-button>
             <dc-button type="primary">
-                <font-awesome-icon icon="search" />Search
+                <font-awesome-icon icon="search" />
+                <span style="margin-left: 5px">Search</span>
             </dc-button>
             <dc-button type="primary">
-                Upload
+                <span style="margin-right: 5px">Upload</span>
                 <font-awesome-icon icon="cloud-upload-alt" />
             </dc-button>
         </div>

@@ -1,7 +1,12 @@
 <template>
-    <div id="dropdown">
-        <!-- On click we call the toggle method -->
-        <div class="selected" @click="toggle">{{ selected }}</div>
+    <div ref="langSelect" id="dropdown">
+        <div @click="toggle" class="selected-container">
+            <!-- On click we call the toggle method -->
+            <div class="selected">{{ selected }}</div>
+            <!-- TODO: can be modified so that it's under ::after property -->
+            <font-awesome-icon class="icon" icon="chevron-down" size="xs" />
+        </div>
+
         <div class="options" v-show="isOpen">
             <!-- v-for loops trough `options` -->
             <!-- and renders a div containing the `option`s value. -->
@@ -12,9 +17,6 @@
                 @click="set(language.full, language.abbr)"
             >{{ language.full }}</div>
         </div>
-
-        <!-- TODO: can be modified so that it's under ::after property -->
-        <font-awesome-icon icon="chevron-down" size="xs" />
     </div>
 </template>
 <script>
@@ -43,7 +45,7 @@ export default {
         },
         // Set option as selected state and close dropdown.
         set: function(langFull, langAbbr) {
-            console.log(langFull, langAbbr);
+            // console.log(langFull, langAbbr);
 
             this.selectCurrLanguage(langAbbr);
             this.$i18n.locale = langAbbr;
@@ -59,8 +61,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$key-color: #38ada9;
 $font-color: #2c3e50;
+@import "../assets/presets.scss";
+@import "../assets/var.scss";
 
 #dropdown {
     font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -73,8 +76,30 @@ $font-color: #2c3e50;
     justify-content: center;
     align-items: center;
 
-    .selected {
-        margin-right: 5px;
+    .selected-container {
+        cursor: pointer;
+        .selected {
+            display: inline-block;
+            margin-right: 5px;
+            @include clear-select-effect;
+            @include decent-transition(0.1s);
+            &:hover {
+                color: $--decent-green;
+            }
+            pointer-events: none;
+        }
+
+        .icon {
+            @include decent-transition(0.1s);
+            pointer-events: none;
+        }
+
+        &:hover {
+            .selected,
+            .icon {
+                color: $--decent-green;
+            }
+        }
     }
 
     .options {
@@ -83,16 +108,18 @@ $font-color: #2c3e50;
         top: 100%;
         z-index: 1;
         width: 120%;
-        border: solid 1px #ccc;
         transition: ease-in-out;
         padding: 10px 0;
         background-color: #fff;
-        box-shadow: 1px 1px #ccc;
+        border-radius: 4px;
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
         .option {
+            @include clear-select-effect;
+            cursor: pointer;
             padding: 5px 15px;
             &:hover {
-                color: $key-color;
-                background-color: lighten($key-color, 50%);
+                color: $--decent-green;
+                background-color: lighten($--decent-green, 50%);
             }
         }
     }

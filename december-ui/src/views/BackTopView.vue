@@ -1,74 +1,52 @@
 <template>
     <div>
         <BackToTop :bottom="100">UP</BackToTop>
-        <h2>Backtop</h2>
-        <p>A button to back to top</p>
+        <h2>{{$t('backtopView.title')}}</h2>
+        <p>{{$t('backtopView.intro')}}</p>
 
-        <h3>Basic usage</h3>
-        <p>Scroll down to see the bottom-right button.</p>
+        <h3>{{$t('backtopView.basic.name')}}</h3>
+        <p>{{$t('backtopView.basic.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
-                <p>Scroll down to see the bottom-right button.</p>
+                <p>{{$t('backtopView.basic.intro')}}</p>
             </template>
             <template v-slot:code-area>
                 <BackTopCode />
             </template>
         </DemoBlock>
 
-        <h3>Customizations</h3>
-        <p>Display area is 40px * 40px.</p>
+        <h3>{{$t('backtopView.custom.name')}}</h3>
+        <p>{{$t('backtopView.custom.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
-                <p>Scroll down to see the bottom-right button.</p>
+                <p>{{$t('backtopView.basic.intro')}}</p>
             </template>
             <template v-slot:code-area>
-                <BackTopCode />
+                <BackTopCustomCode />
             </template>
         </DemoBlock>
 
-        <h3>Attributes</h3>
-        <Table :heads="heads" :rows="rows" />
+        <div :key="idx" v-for="(table, idx) in $t('backtopView.tables')">
+            <h3>{{ table.name }}</h3>
+            <Table :heads="table.heads" :rows="table.rows" />
+        </div>
     </div>
 </template>
 
 <script>
 import BackTopCode from "../groups/BackTopCode";
+import BackTopCustomCode from "../groups/BackTopCustomCode";
 import DemoBlock from "../components/DemoBlock";
 import BackToTop from "../components/BackToTop";
 import Table from "../components/Table";
 export default {
     data() {
-        return {
-            heads: [
-                "Attribute",
-                "Description",
-                "Type",
-                "Accepted Values",
-                "Default"
-            ],
-            rows: {
-                row1: [
-                    "target",
-                    "the target to trigger scroll",
-                    "string",
-                    "—",
-                    "—"
-                ],
-                row2: [
-                    "visibility-height",
-                    "the button will not show until the scroll height reaches this value",
-                    "number",
-                    "—",
-                    200
-                ],
-                row3: ["right", "right distance", "number", "—", 40],
-                row4: ["left", "left distance", "number", "—", 40]
-            }
-        };
+        return {};
     },
     components: {
         DemoBlock,
         BackTopCode,
+        BackTopCustomCode,
         Table,
         BackToTop
     },

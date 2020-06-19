@@ -1,10 +1,10 @@
 <template>
     <div>
-        <h2>Checkbox</h2>
-        <p>A group of options for multiple choices.</p>
+        <h2>{{$t('checkboxView.title')}}</h2>
+        <p>{{$t('checkboxView.intro')}}</p>
 
-        <h3>Basic usage</h3>
-        <p>Checkbox can be used to switch between two states.</p>
+        <h3>{{$t('checkboxView.basic.name')}}</h3>
+        <p>{{$t('checkboxView.basic.intro')}}</p>
 
         <DemoBlock>
             <template v-slot:demo-area>
@@ -29,9 +29,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Disabled state</h3>
-        <p>Disabled state for checkbox.</p>
-
+        <h3>{{$t('checkboxView.disabled.name')}}</h3>
+        <p>{{$t('checkboxView.disabled.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <div style="display: flex; flex-direction: row">
@@ -50,9 +49,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Checkbox group</h3>
-        <p>It is used for multiple checkboxes which are bound in one group, and indicates whether one option is selected by checking if it is checked.</p>
-
+        <h3>{{$t('checkboxView.group.name')}}</h3>
+        <p>{{$t('checkboxView.group.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <dc-checkbox-group v-model="checkList" style="display: flex; flex-direction: row">
@@ -74,9 +72,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Indeterminate</h3>
-        <p>The indeterminate property can help you to achieve a 'check all' effect.</p>
-
+        <h3>{{$t('checkboxView.indeterminate.name')}}</h3>
+        <p>{{$t('checkboxView.indeterminate.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <dc-checkbox
@@ -99,9 +96,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Minimum / Maximum items checked</h3>
-        <p>The min and max properties can help you to limit the number of checked items.</p>
-
+        <h3>{{$t('checkboxView.minmax.name')}}</h3>
+        <p>{{$t('checkboxView.minmax.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <dc-checkbox-group
@@ -119,7 +115,7 @@
             </template>
         </DemoBlock>
 
-        <div :key="idx" v-for="(table,idx) in tables">
+        <div :key="idx" v-for="(table,idx) in $t('checkboxView.tables')">
             <h3>{{table.name}}</h3>
             <Table :heads="table.heads" :rows="table.rows" />
         </div>
@@ -155,228 +151,7 @@ export default {
             isIndeterminate: true,
             checkAll: false,
             checkedCities: ["Shanghai", "Beijing"],
-            checkedCities2: ["Shanghai", "Beijing"],
-            tables: [
-                {
-                    name: "Checkbox Attributes",
-                    heads: [
-                        "Attribute",
-                        "Description",
-                        "Type",
-                        "Accepted Values",
-                        "Default"
-                    ],
-                    rows: {
-                        row1: [
-                            "value / v-model",
-                            "binding value",
-                            "string / number / boolean",
-                            "-",
-                            "-"
-                        ],
-                        row2: [
-                            "label",
-                            "value of a Checkbox when it's used inside a checkbox-group",
-                            "string / number / boolean",
-                            "-",
-                            "-"
-                        ],
-                        row3: [
-                            "true-label",
-                            "value of the Checkbox if it's checked",
-                            "string / number",
-                            "-",
-                            "-"
-                        ],
-                        row4: [
-                            "true-label",
-                            "value of the Checkbox if it's not checked",
-                            "string / number",
-                            "-",
-                            "-"
-                        ],
-                        row5: [
-                            "disabled",
-                            "whether Checkbox is disabled",
-                            "boolean",
-                            "-",
-                            "false"
-                        ],
-                        row6: [
-                            "border",
-                            "whether to add a border around Checkbox",
-                            "boolean",
-                            "-",
-                            "false"
-                        ],
-                        row7: [
-                            "size",
-                            "size of the Checkbox, only works when border is true",
-                            "string",
-                            "medium / small / mini",
-                            "-"
-                        ],
-                        row8: [
-                            "name",
-                            "native 'name' attribute",
-                            "string",
-                            "-",
-                            "-"
-                        ],
-                        row9: [
-                            "checked",
-                            "if a Checkbox is checked",
-                            "boolean",
-                            "-",
-                            "false"
-                        ],
-                        row10: [
-                            "indeterminate",
-                            "same as indeterminate in native checkbox",
-                            "boolean",
-                            "-",
-                            "false"
-                        ]
-                    }
-                },
-                {
-                    name: "Checkbox Event",
-                    heads: ["Event Name", "Description", "Parameters"],
-                    rows: {
-                        row1: [
-                            "change",
-                            "triggers when the bound value changes",
-                            "the updated value"
-                        ]
-                    }
-                },
-                {
-                    name: "Checkbox-group Attributes",
-                    heads: [
-                        "Attribute",
-                        "Description",
-                        "Type",
-                        "Accepted Values",
-                        "Default"
-                    ],
-                    rows: {
-                        row1: [
-                            "value / v-model",
-                            "binding value",
-                            "string / number / boolean",
-                            "-",
-                            "-"
-                        ],
-                        row2: [
-                            "size",
-                            "size of checkbox buttons or bordered checkboxes",
-                            "string",
-                            "medium / small / mini",
-                            "-"
-                        ],
-                        row3: [
-                            "disabled",
-                            "whether the nesting checkboxes are disabled",
-                            "boolean",
-                            "-",
-                            "false"
-                        ],
-                        row4: [
-                            "min",
-                            "minimum number of checkbox checked",
-                            "number",
-                            "-",
-                            "-"
-                        ],
-                        row5: [
-                            "max",
-                            "maximum number of checkbox checked",
-                            "number",
-                            "-",
-                            "-"
-                        ],
-                        row6: [
-                            "text-color",
-                            "font color when button is active",
-                            "string",
-                            "-",
-                            "#ffffff"
-                        ],
-                        row7: [
-                            "fill",
-                            "border and background color when button is active",
-                            "string",
-                            "-",
-                            "#409eff"
-                        ]
-                    }
-                },
-                {
-                    name: "Checkbox-group Event",
-                    heads: ["Event Name", "Description", "Parameters"],
-                    rows: {
-                        row1: [
-                            "change",
-                            "triggers when the bound value changes",
-                            "the updated value"
-                        ]
-                    }
-                },
-                {
-                    name: "Checkbox-group Attributes",
-                    heads: [
-                        "Attribute",
-                        "Description",
-                        "Type",
-                        "Accepted Values",
-                        "Default"
-                    ],
-                    rows: {
-                        row1: [
-                            "label",
-                            "the value of Checkbox",
-                            "string / number / boolean",
-                            "-",
-                            "-"
-                        ],
-                        row2: [
-                            "true-label",
-                            "value of the checkbox if it's checked",
-                            "string / number",
-                            "-",
-                            "-"
-                        ],
-                        row3: [
-                            "false-label",
-                            "value of the checkbox if it's checked",
-                            "string / number",
-                            "-",
-                            "-"
-                        ],
-                        row4: [
-                            "disabled",
-                            "whether the Checkbox is disabled",
-                            "boolean",
-                            "-",
-                            "false"
-                        ],
-                        row5: [
-                            "name",
-                            "native 'name' attribute",
-                            "string",
-                            "-",
-                            "-"
-                        ],
-                        row6: [
-                            "checked",
-                            "if the checkbox is checked",
-                            "boolean",
-                            "-",
-                            "false"
-                        ]
-                    }
-                }
-            ]
+            checkedCities2: ["Shanghai", "Beijing"]
         };
     },
     methods: {

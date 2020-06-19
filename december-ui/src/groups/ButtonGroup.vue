@@ -2,10 +2,11 @@
     <div id="demo-block">
         <div class="dc-row dc-row-default">
             <dc-button type="primary">
-                <font-awesome-icon icon="chevron-left" />Previous Page
+                <font-awesome-icon icon="chevron-left" />
+                <span style="margin-left: 5px">Previous Page</span>
             </dc-button>
             <dc-button type="primary">
-                Next Page
+                <span style="margin-right: 5px">Next Page</span>
                 <font-awesome-icon icon="chevron-right" />
             </dc-button>
         </div>

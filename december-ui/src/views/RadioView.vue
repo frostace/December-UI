@@ -1,10 +1,10 @@
 <template>
     <div>
-        <h2>Radio</h2>
-        <p>Single selection among multiple options</p>
+        <h2>{{$t('radioView.title')}}</h2>
+        <p>{{$t('radioView.intro')}}</p>
 
-        <h3>Basic usage</h3>
-        <p>Radio should not have too many options. Otherwise, use the Select component instead.</p>
+        <h3>{{$t('radioView.basic.name')}}</h3>
+        <p>{{$t('radioView.basic.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <dc-radio v-model="selected" label="1">Option A</dc-radio>
@@ -28,10 +28,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Disabled</h3>
-        <p>
-            <code class="little-code">disabled</code> attribute is used to disable the radio.
-        </p>
+        <h3>{{$t('radioView.disabled.name')}}</h3>
+        <p>{{$t('radioView.disabled.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <dc-radio v-model="selected2" label="disabled" disabled>Option A</dc-radio>
@@ -43,8 +41,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Radio button group</h3>
-        <p>Suitable for choosing from some mutually exclusive options.</p>
+        <h3>{{$t('radioView.group.name')}}</h3>
+        <p>{{$t('radioView.group.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <dc-radio-group v-model="selected3">
@@ -59,8 +57,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Button style</h3>
-        <p>Radio with button styles.</p>
+        <h3>{{$t('radioView.style.name')}}</h3>
+        <p>{{$t('radioView.style.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <dc-radio-group v-model="selected4">
@@ -94,7 +92,7 @@
             </template>
         </DemoBlock>
 
-        <h3>With borders</h3>
+        <h3>{{$t('radioView.border.name')}}</h3>
         <DemoBlock>
             <template v-slot:demo-area>
                 <dc-radio-group v-model="selected8">
@@ -120,7 +118,7 @@
             </template>
         </DemoBlock>
 
-        <div :key="idx" v-for="(table,idx) in tables">
+        <div :key="idx" v-for="(table,idx) in $t('radioView.tables')">
             <h3>{{table.name}}</h3>
             <Table :heads="table.heads" :rows="table.rows" />
         </div>
@@ -151,165 +149,7 @@ export default {
             selected8: "1",
             selected9: "1",
             selected10: "1",
-            selected11: "1",
-            tables: [
-                {
-                    name: "Radio Attributes",
-                    heads: [
-                        "Attribute",
-                        "Description",
-                        "Type",
-                        "Accepted Values",
-                        "Default"
-                    ],
-                    rows: {
-                        row1: [
-                            "value / v-model",
-                            "binding value",
-                            "string / number / boolean",
-                            "-",
-                            "-"
-                        ],
-                        row2: [
-                            "label",
-                            "the value of Radio",
-                            "string / number / boolean",
-                            "-",
-                            "-"
-                        ],
-                        row3: [
-                            "disabled",
-                            "whether Radio is disabled",
-                            "boolean",
-                            "-",
-                            "false"
-                        ],
-                        row4: [
-                            "border",
-                            "whether to add a border around Radio",
-                            "boolean",
-                            "-",
-                            "false"
-                        ],
-                        row5: [
-                            "size",
-                            "size of the Radio, only works when border is true",
-                            "string",
-                            "medium / small / mini",
-                            "-"
-                        ],
-                        row6: [
-                            "name",
-                            "native 'name' attribute",
-                            "string",
-                            "-",
-                            "-"
-                        ]
-                    }
-                },
-                {
-                    name: "Radio Event",
-                    heads: ["Event Name", "Description", "Parameters"],
-                    rows: {
-                        row1: [
-                            "change",
-                            "triggers when the bound value changes",
-                            "the label value of the chosen radio"
-                        ]
-                    }
-                },
-                {
-                    name: "Radio-group Attributes",
-                    heads: [
-                        "Attribute",
-                        "Description",
-                        "Type",
-                        "Accepted Values",
-                        "Default"
-                    ],
-                    rows: {
-                        row1: [
-                            "value / v-model",
-                            "binding value",
-                            "string / number / boolean",
-                            "-",
-                            "-"
-                        ],
-                        row2: [
-                            "label",
-                            "the value of Radio",
-                            "string / number / boolean",
-                            "-",
-                            "-"
-                        ],
-                        row3: [
-                            "disabled",
-                            "whether Radio is disabled",
-                            "boolean",
-                            "-",
-                            "false"
-                        ]
-                        // row4: [
-                        //     "text-color",
-                        //     "font-color when botton is active",
-                        //     "string",
-                        //     "-",
-                        //     "#ffffff"
-                        // ],
-                        // row5: [
-                        //     "fill",
-                        //     "border and background color when button is active",
-                        //     "string",
-                        //     "-",
-                        //     "#409EFF"
-                        // ]
-                    }
-                },
-                {
-                    name: "Radio-group Event",
-                    heads: ["Event Name", "Description", "Parameters"],
-                    rows: {
-                        row1: [
-                            "change",
-                            "triggers when the bound value changes",
-                            "the label value of the chosen radio"
-                        ]
-                    }
-                },
-                {
-                    name: "Radio-group Attributes",
-                    heads: [
-                        "Attribute",
-                        "Description",
-                        "Type",
-                        "Accepted Values",
-                        "Default"
-                    ],
-                    rows: {
-                        row1: [
-                            "label",
-                            "the value of Radio",
-                            "string / number / boolean",
-                            "-",
-                            "-"
-                        ],
-                        row2: [
-                            "disabled",
-                            "whether Radio is disabled",
-                            "boolean",
-                            "-",
-                            "false"
-                        ],
-                        row3: [
-                            "name",
-                            "native 'name' attribute",
-                            "string",
-                            "-",
-                            "-"
-                        ]
-                    }
-                }
-            ]
+            selected11: "1"
         };
     },
     methods: {

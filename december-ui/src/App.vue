@@ -1,13 +1,13 @@
 <template>
-    <div id="app">
+    <div @click="hideDropdown" id="app">
         <BackToTop>
             <font-awesome-icon icon="caret-up" />
         </BackToTop>
         <NavBar ref="navbar" class="navbar" />
+        <!-- add currentPage.includes('guide') || below to enable left sidebar in Guide page -->
         <LeftSidebar
             v-if="
-                currentPage.includes('guide') ||
-                currentPage.includes('component')
+                currentPage.includes('guide') ||  currentPage.includes('component')
             "
             class="leftsidebar"
         />
@@ -45,17 +45,27 @@ export default {
         },
         currentSubPage() {
             var routerPath = this.$route.path;
-            console.log(
-                routerPath.includes("component")
-                    ? routerPath.slice(routerPath.lastIndexOf("/") + 1)
-                    : undefined
-            );
+            // console.log(
+            //     routerPath.includes("component")
+            //         ? routerPath.slice(routerPath.lastIndexOf("/") + 1)
+            //         : undefined
+            // );
             return routerPath.includes("component")
                 ? routerPath.slice(routerPath.lastIndexOf("/") + 1)
                 : undefined;
         }
     },
-    updated() {}
+    methods: {
+        hideDropdown(e) {
+            e.stopPropagation();
+            let langSelect = this.$refs.navbar.$children[
+                this.$refs.navbar.$children.length - 1
+            ];
+            if (e.target.className !== "selected-container") {
+                langSelect.hide();
+            }
+        }
+    }
 };
 </script>
 

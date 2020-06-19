@@ -1,10 +1,10 @@
 <template>
     <div class="layout">
-        <h2>Layout</h2>
-        <p>Quickly and easily create layouts with the basic 24-column.</p>
+        <h2>{{$t('layoutView.title')}}</h2>
+        <p>{{$t('layoutView.intro')}}</p>
 
-        <h3>Basic layout</h3>
-        <p>Create basic grid layout using columns</p>
+        <h3>{{$t('layoutView.basic.name')}}</h3>
+        <p>{{$t('layoutView.basic.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <BasicLayoutGroup />
@@ -23,8 +23,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Column Spacing</h3>
-        <p>Column spacing is supported</p>
+        <h3>{{$t('layoutView.column.name')}}</h3>
+        <p>{{$t('layoutView.column.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <ColumnSpacingLayoutGroup />
@@ -35,8 +35,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Hybrid layout</h3>
-        <p>Form a more complex hybrid layout by combining the basic 1/24 columns.</p>
+        <h3>{{$t('layoutView.hybrid.name')}}</h3>
+        <p>{{$t('layoutView.hybrid.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <HybridLayoutGroup />
@@ -47,8 +47,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Custom offset</h3>
-        <p>You can specify column offsets.</p>
+        <h3>{{$t('layoutView.offset.name')}}</h3>
+        <p>{{$t('layoutView.offset.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <CustomOffsetLayoutGroup />
@@ -59,8 +59,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Alignment</h3>
-        <p>Use the flex layout to make flexible alignment of columns.</p>
+        <h3>{{$t('layoutView.align.name')}}</h3>
+        <p>{{$t('layoutView.align.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <AlignmentLayoutGroup />
@@ -70,7 +70,8 @@
                 <AlignmentLayoutGroupCode />
             </template>
         </DemoBlock>
-        <div :key="idx" v-for="(table, idx) in tables">
+
+        <div :key="idx" v-for="(table, idx) in $t('layoutView.tables')">
             <h3>{{table.name}}</h3>
             <Table :heads="table.heads" :rows="table.rows" />
         </div>
@@ -94,92 +95,7 @@ import AlignmentLayoutGroupCode from "../groups/AlignmentLayoutGroupCode";
 import Table from "../components/Table";
 export default {
     data() {
-        return {
-            tables: [
-                {
-                    name: "Row Attribute",
-                    heads: [
-                        "Attribute",
-                        "Description",
-                        "Type",
-                        "Accepted Values",
-                        "Default"
-                    ],
-                    rows: {
-                        row1: ["gutter", "grid spacing", "number", "—", "0"],
-                        row2: [
-                            "type",
-                            "layout mode, you can use flex, works in modern browsers",
-                            "string",
-                            "—",
-                            "—"
-                        ],
-                        row3: [
-                            "justify",
-                            "horizontal alignment of flex layout",
-                            "string",
-                            "start/end/center/space-around/space-between",
-                            "start"
-                        ],
-                        row4: [
-                            "align",
-                            "vertical alignment of flex layout",
-                            "string",
-                            "top/middle/bottom",
-                            "top"
-                        ],
-                        row5: [
-                            "tag",
-                            "custom element tag",
-                            "string",
-                            "*",
-                            "div"
-                        ]
-                    }
-                },
-                {
-                    name: "Col Attribute",
-                    heads: [
-                        "Attribute",
-                        "Description",
-                        "Type",
-                        "Accepted Values",
-                        "Default"
-                    ],
-                    rows: {
-                        row1: [
-                            "span",
-                            "number of column the grid spans",
-                            "number",
-                            "—",
-                            "24"
-                        ],
-                        row2: [
-                            "offset",
-                            "number of spacing on the left side of the grid	",
-                            "number",
-                            "—",
-                            "0"
-                        ],
-                        row3: [
-                            "push",
-                            "number of columns that grid moves to the right	",
-                            "number",
-                            "—",
-                            "0"
-                        ],
-                        row4: [
-                            "pull",
-                            "number of columns that grid moves to the left",
-                            "number",
-                            "—",
-                            "0"
-                        ],
-                        row5: ["...", "...", "...", "...", "..."]
-                    }
-                }
-            ]
-        };
+        return {};
     },
     components: {
         DemoBlock,

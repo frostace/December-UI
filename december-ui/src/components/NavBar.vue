@@ -83,8 +83,8 @@ $font-color: #2c3e50;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    // height: 4rem;
-    display: none; // comment this and uncomment height to recover navbar display
+    height: 4rem;
+    // display: none; // comment this and  height to recover navbar display
     border-bottom: 1px #ccc solid;
     a {
         font-weight: bold;

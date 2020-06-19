@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["Theme"],{de93:function(e,t,n){"use strict";n.r(t);var s=function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"theme"},[n("h1",[e._v(e._s(e.$t("placeholders.otherPages")))])])},l=[],a={components:{}},c=a,o=n("2877"),r=Object(o["a"])(c,s,l,!1,null,null,null);t["default"]=r.exports}}]);
+//# sourceMappingURL=Theme.6e1fb165.js.map

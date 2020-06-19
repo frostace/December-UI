@@ -1,9 +1,9 @@
 <template>
     <div>
-        <h2>Switch</h2>
-        <p>Switch is used for switching between two opposing states.</p>
+        <h2>{{$t('switchView.title')}}</h2>
+        <p>{{$t('switchView.intro')}}</p>
 
-        <h3>Basic usage</h3>
+        <h3>{{$t('switchView.basic.name')}}</h3>
         <DemoBlock>
             <template v-slot:demo-area>
                 <dc-switch v-model="value1" />
@@ -21,7 +21,7 @@
             <template v-slot:code-area></template>
         </DemoBlock>
 
-        <h3>Text description</h3>
+        <h3>{{$t('switchView.text.name')}}</h3>
         <DemoBlock>
             <template v-slot:demo-area>
                 <dc-switch v-model="value3" active-text="Pay by month" inactive-text="Pay by year" />
@@ -44,7 +44,7 @@
             <template v-slot:code-area></template>
         </DemoBlock>
 
-        <h3>Extended value types</h3>
+        <h3>{{$t('switchView.extended.name')}}</h3>
         <DemoBlock>
             <template v-slot:demo-area>
                 <dc-switch
@@ -68,7 +68,7 @@
             <template v-slot:code-area></template>
         </DemoBlock>
 
-        <h3>Disabled</h3>
+        <h3>{{$t('switchView.disabled.name')}}</h3>
         <DemoBlock>
             <template v-slot:demo-area>
                 <dc-switch v-model="value6" disabled />
@@ -83,7 +83,7 @@
             <template v-slot:code-area></template>
         </DemoBlock>
 
-        <div :key="idx" v-for="(table,idx) in tables">
+        <div :key="idx" v-for="(table,idx) in $t('switchView.tables')">
             <h3>{{table.name}}</h3>
             <Table :heads="table.heads" :rows="table.rows" />
         </div>
@@ -103,130 +103,7 @@ export default {
             value4: true,
             value5: false,
             value6: true,
-            value7: false,
-            tables: [
-                {
-                    name: "Attributes",
-                    heads: [
-                        "Attribute",
-                        "Description",
-                        "Type",
-                        "Accepted Values",
-                        "Default"
-                    ],
-                    rows: {
-                        row1: [
-                            "value / v-model",
-                            "binding value",
-                            "string / number / boolean",
-                            "-",
-                            "-"
-                        ],
-                        row2: [
-                            "disabled",
-                            "whether Switch is disabled",
-                            "boolean",
-                            "-",
-                            "false"
-                        ],
-                        row3: [
-                            "width",
-                            "width of a Switch",
-                            "number",
-                            "-",
-                            "40"
-                        ],
-                        row4: [
-                            "active-icon-class",
-                            "class name of the icon displayed when in 'on' state, overrides active-text",
-                            "string",
-                            "-",
-                            "-"
-                        ],
-                        row5: [
-                            "inactive-icon-class",
-                            "class name of the icon displayed when in 'off' state, overrides inactive-text",
-                            "string",
-                            "-",
-                            "-"
-                        ],
-                        row6: [
-                            "active-text",
-                            "text displayed when in 'on' state",
-                            "string",
-                            "-",
-                            "-"
-                        ],
-                        row7: [
-                            "inactive-text",
-                            "text displayed when in 'off' state",
-                            "string",
-                            "-",
-                            "-"
-                        ],
-                        row8: [
-                            "active-value",
-                            "switch value when in 'on' state",
-                            "boolean / string / number",
-                            "-",
-                            "-"
-                        ],
-                        row9: [
-                            "inactive-value",
-                            "switch value when in 'off' state",
-                            "boolean / string / number",
-                            "-",
-                            "-"
-                        ],
-                        row10: [
-                            "active-color",
-                            "background color when in 'on' state",
-                            "string",
-                            "-",
-                            "#409eff"
-                        ],
-                        row11: [
-                            "inactive-color",
-                            "background color when in 'off' state",
-                            "string",
-                            "-",
-                            "#c0ccda"
-                        ],
-                        row12: [
-                            "name",
-                            "input name of Switch",
-                            "string",
-                            "-",
-                            "-"
-                        ],
-                        row13: [
-                            "validate-event",
-                            "whether to trigger from validation",
-                            "boolean",
-                            "-",
-                            "true"
-                        ]
-                    }
-                },
-                {
-                    name: "Events",
-                    heads: ["Event Name", "Description", "Parameters"],
-                    rows: {
-                        row1: [
-                            "change",
-                            "triggers when the bound value changes",
-                            "value after changing"
-                        ]
-                    }
-                },
-                {
-                    name: "Methods",
-                    heads: ["Method", "Description", "Parameters"],
-                    rows: {
-                        row1: ["focus", "focus the Switch component", "-"]
-                    }
-                }
-            ]
+            value7: false
         };
     },
     components: {

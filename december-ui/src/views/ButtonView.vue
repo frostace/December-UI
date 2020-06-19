@@ -1,8 +1,9 @@
 <template>
     <div>
-        <h2>Button</h2>
-        <p>Commonly used button</p>
-        <h3>Basic usage</h3>
+        <h2>{{$t('buttonView.title')}}</h2>
+        <p>{{$t('buttonView.intro')}}</p>
+
+        <h3>{{$t('buttonView.basic.name')}}</h3>
         <DemoBlock>
             <template v-slot:demo-area>
                 <BasicButtonGroup />
@@ -23,11 +24,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Disabled Button</h3>
-        <p>
-            The
-            <code class="little-code">distabled</code> attribute determines if the button is disabled.
-        </p>
+        <h3>{{$t('buttonView.disabled.name')}}</h3>
+        <p>{{$t('buttonView.disabled.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <DisabledButtonGroup />
@@ -49,8 +47,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Text Button</h3>
-        <p>Buttons without border and background.</p>
+        <h3>{{$t('buttonView.text.name')}}</h3>
+        <p>{{$t('buttonView.text.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <TextButtonGroup />
@@ -62,8 +60,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Icon Button</h3>
-        <p>Use icons to add more meaning to Button. You can use icon alone to save some space, or use it with text.</p>
+        <h3>{{$t('buttonView.icon.name')}}</h3>
+        <p>{{$t('buttonView.icon.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <IconButtonGroup />
@@ -84,8 +82,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Button Group</h3>
-        <p>Displayed as a button group, can be used to group a series of similar operations.</p>
+        <h3>{{$t('buttonView.group.name')}}</h3>
+        <p>{{$t('buttonView.group.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <ButtonGroup />
@@ -102,8 +100,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Loading Button</h3>
-        <p>Click the button to load data, then the button displays a loading state.</p>
+        <h3>{{$t('buttonView.loading.name')}}</h3>
+        <p>{{$t('buttonView.loading.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <LoadingButton />
@@ -121,8 +119,8 @@
             </template>
         </DemoBlock>
 
-        <h3>Sizes</h3>
-        <p>Besides default size, Button component provides three additional sizes for you to choose among different scenarios.</p>
+        <h3>{{$t('buttonView.size.name')}}</h3>
+        <p>{{$t('buttonView.size.intro')}}</p>
         <DemoBlock>
             <template v-slot:demo-area>
                 <SizeButtonGroup />
@@ -143,8 +141,10 @@
             </template>
         </DemoBlock>
 
-        <h3>Attributes</h3>
-        <Table :heads="heads" :rows="rows" />
+        <div :key="idx" v-for="(table,idx) in $t('buttonView.tables')">
+            <h3>{{table.name}}</h3>
+            <Table :heads="table.heads" :rows="table.rows" />
+        </div>
     </div>
 </template>
 

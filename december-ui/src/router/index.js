@@ -111,10 +111,12 @@ const routes = [
             import(/* webpackChunkName: "Theme" */ "../views/Theme.vue"),
     },
     {
-        path: "/resource",
-        name: "Resource",
+        path: "/playground",
+        name: "Playground",
         component: () =>
-            import(/* webpackChunkName: "Resource" */ "../views/Resource.vue"),
+            import(
+                /* webpackChunkName: "Playground" */ "../views/Playground.vue"
+            ),
     },
     {
         path: "/installation",
