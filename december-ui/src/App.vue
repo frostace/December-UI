@@ -109,7 +109,7 @@ html {
     grid-column: 2 / span 4;
     grid-row: 2 / span 1;
 
-    // add styling for scrollbar
+    // scrollbar styling for -webkit- based browsers
     &::-webkit-scrollbar {
         width: 8px;
     }
@@ -121,6 +121,9 @@ html {
         border-radius: 10px;
         background-color: grey;
     }
+    // scrollbar styling for firefox
+    scrollbar-color: grey white;
+    scrollbar-width: thin;
 }
 
 .fullcontent {
