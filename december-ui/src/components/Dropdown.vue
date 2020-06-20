@@ -1,6 +1,7 @@
 <template>
     <div ref="langSelect" id="dropdown">
         <div @click="toggle" class="selected-container">
+            <font-awesome-icon class="icon icon-lang" icon="language" size="1x" />
             <!-- On click we call the toggle method -->
             <div class="selected">{{ selected }}</div>
             <!-- TODO: can be modified so that it's under ::after property -->
@@ -70,17 +71,21 @@ $font-color: #2c3e50;
     font-weight: lighter;
     position: relative;
     height: 4rem;
-    width: 5rem;
+    width: 7rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 
     .selected-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         cursor: pointer;
         .selected {
             display: inline-block;
             margin-right: 5px;
+            margin-left: 5px;
             @include clear-select-effect;
             @include decent-transition(0.1s);
             &:hover {
@@ -92,6 +97,10 @@ $font-color: #2c3e50;
         .icon {
             @include decent-transition(0.1s);
             pointer-events: none;
+        }
+
+        .icon-lang {
+            font-size: 20px;
         }
 
         &:hover {
