@@ -132,3 +132,21 @@
     -moz-transform: translateX($x-offset) translateY($y-offset);
     -webkit-transform: translateX($x-offset) translateY($y-offset);
 }
+
+@mixin decent-scrollbar-style($width: 4px) {
+    // scrollbar styling for -webkit- based browsers
+    &::-webkit-scrollbar {
+        width: $width;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        opacity: 0;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #ccc;
+    }
+    // scrollbar styling for firefox
+    scrollbar-color: #ccc white;
+    scrollbar-width: thin;
+}

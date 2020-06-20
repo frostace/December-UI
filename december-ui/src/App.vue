@@ -70,6 +70,9 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./assets/var.scss";
+@import "./assets/presets.scss";
+
 $content-font-size: 14px;
 $key-color: #38ada9;
 $font-color: #2c3e50;
@@ -109,21 +112,7 @@ html {
     grid-column: 2 / span 4;
     grid-row: 2 / span 1;
 
-    // scrollbar styling for -webkit- based browsers
-    &::-webkit-scrollbar {
-        width: 8px;
-    }
-    &::-webkit-scrollbar-track {
-        border-radius: 10px;
-        opacity: 0;
-    }
-    &::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        background-color: grey;
-    }
-    // scrollbar styling for firefox
-    scrollbar-color: grey white;
-    scrollbar-width: thin;
+    @include decent-scrollbar-style;
 }
 
 .fullcontent {

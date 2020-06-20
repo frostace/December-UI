@@ -93,6 +93,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/var.scss";
+@import "../assets/presets.scss";
+
 $key-color: #38ada9;
 $font-color: #132420;
 $nav-item-font-size: 10px;
@@ -102,6 +105,7 @@ $content-font-size: 14px;
     width: 10rem;
     display: flex;
     overflow: auto;
+    @include decent-scrollbar-style;
     flex-direction: column;
     align-items: left;
     a.section-name {
