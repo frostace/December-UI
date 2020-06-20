@@ -62,9 +62,11 @@ export default {
         console.log(this.visible);
         let backTopButton = this.$el.querySelector("button");
         let subWindow = document.querySelector(".subcontent");
-        backTopButton.style.right = this.right + "px";
-        backTopButton.style.bottom = this.bottom + "px";
-        subWindow.addEventListener("scroll", this.catchScroll);
+        if (backTopButton && subWindow) {
+            backTopButton.style.right = this.right + "px";
+            backTopButton.style.bottom = this.bottom + "px";
+            subWindow.addEventListener("scroll", this.catchScroll);
+        }
     }
 };
 </script>

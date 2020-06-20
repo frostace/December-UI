@@ -75,7 +75,7 @@
     }
 }
 
-@mixin default-border-style($border-color) {
+@mixin default-border-style($border-color: #606266) {
     border: {
         style: solid;
         width: 1px;

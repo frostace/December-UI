@@ -157,6 +157,12 @@ export const locale = {
             ],
         },
     ],
+    themeSection: {
+        themeTitle: "官方主题",
+        themeName: "December",
+        themeType: "默认主题",
+        themeAuthor: "frostace",
+    },
     layoutView: {
         title: "Layout 布局",
         intro: "通过基础的24分栏，轻松创建自定义布局",

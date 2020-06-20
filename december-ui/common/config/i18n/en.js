@@ -157,6 +157,12 @@ export const locale = {
             ],
         },
     ],
+    themeSection: {
+        themeTitle: "Official Theme",
+        themeName: "December",
+        themeType: "Default Theme",
+        themeAuthor: "frostace",
+    },
     layoutView: {
         title: "Layout",
         intro: "Quickly and easily create layouts with the basic 24-column",
