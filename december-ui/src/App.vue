@@ -103,19 +103,29 @@ html {
 }
 
 .subcontent {
+    overflow: auto;
+    scroll-padding-right: 30px;
+    padding: 0 12.5% 0 0;
     grid-column: 2 / span 4;
     grid-row: 2 / span 1;
+
+    // add styling for scrollbar
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        opacity: 0;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: grey;
+    }
 }
 
 .fullcontent {
     grid-column: 1 / span 5;
     grid-row: 2 / span 1;
-}
-
-.subcontent {
-    overflow: auto;
-    scroll-padding-right: 30px;
-    padding: 0 12.5% 0 0;
 }
 
 div > h3 {
