@@ -88,15 +88,15 @@ export default {
     // checked styling
     &.is-checked:not(.is-disabled) {
         span.dc-radio__input {
-            background-color: $--primary-color;
-            border-color: $--primary-color;
+            background-color: $--key-color;
+            border-color: $--key-color;
 
             span.dc-radio__inner::after {
                 transform: translate(100%, 100%);
             }
         }
         span.dc-radio__label {
-            color: $--primary-color;
+            color: $--key-color;
         }
     }
 
@@ -126,7 +126,7 @@ export default {
         padding: 8px 10px;
         border-radius: 4px;
         &:not(.is-disabled).is-checked {
-            border-color: $--primary-color;
+            border-color: $--key-color;
         }
         &.is-disabled.is-checked {
             border-color: #ccc;
@@ -142,7 +142,7 @@ export default {
         @include default-border-style(#ccc);
         border-radius: 50%;
         &:hover {
-            border-color: $--primary-color;
+            border-color: $--key-color;
         }
 
         span.dc-radio__inner::after {

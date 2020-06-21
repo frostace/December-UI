@@ -233,7 +233,7 @@ export default {
         width: 12px;
         height: 12px;
         border-radius: 10px;
-        background: $--primary-color;
+        background: $--key-color;
         cursor: grab;
     }
 }
@@ -245,7 +245,7 @@ export default {
 //     width: 12px;
 //     height: 12px;
 //     border-radius: 10px;
-//     background: $--primary-color;
+//     background: $--key-color;
 //     cursor: grab;
 // }
 

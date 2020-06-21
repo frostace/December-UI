@@ -156,7 +156,7 @@ export default {
 
     &:not(.is-disabled) {
         .dc-checkbox-box-mimic:hover {
-            border-color: $--primary-color;
+            border-color: $--key-color;
         }
     }
 
@@ -178,12 +178,12 @@ export default {
         &.is-checked,
         &.is-indeterminate {
             span.dc-checkbox__label {
-                color: $--primary-color;
+                color: $--key-color;
             }
 
             .dc-checkbox-box-mimic {
-                background-color: $--primary-color;
-                border-color: $--primary-color;
+                background-color: $--key-color;
+                border-color: $--key-color;
             }
         }
     }

@@ -18,7 +18,9 @@
                     <code class="little-code">inactive-color</code> attribute describes the background color in two states.
                 </div>
             </template>
-            <template v-slot:code-area></template>
+            <template v-slot:code-area>
+                <BasicSwitchGroupCode />
+            </template>
         </DemoBlock>
 
         <h3>{{$t('switchView.text.name')}}</h3>
@@ -41,7 +43,9 @@
                     <code class="little-code">inactive-text</code> to show texts.
                 </div>
             </template>
-            <template v-slot:code-area></template>
+            <template v-slot:code-area>
+                <TextSwitchGroupCode />
+            </template>
         </DemoBlock>
 
         <h3>{{$t('switchView.extended.name')}}</h3>
@@ -65,7 +69,9 @@
                     <code class="little-code">Number</code> typed value.
                 </div>
             </template>
-            <template v-slot:code-area></template>
+            <template v-slot:code-area>
+                <ExtendSwitchGroupCode />
+            </template>
         </DemoBlock>
 
         <h3>{{$t('switchView.disabled.name')}}</h3>
@@ -80,7 +86,9 @@
                     <code class="little-code">disabled</code> attribute disables Switch.
                 </div>
             </template>
-            <template v-slot:code-area></template>
+            <template v-slot:code-area>
+                <DisabledSwitchGroupCode />
+            </template>
         </DemoBlock>
 
         <div :key="idx" v-for="(table,idx) in $t('switchView.tables')">
@@ -92,6 +100,10 @@
 
 <script>
 import dcSwitch from "../components/Switch";
+import BasicSwitchGroupCode from "../groups/BasicSwitchGroupCode";
+import TextSwitchGroupCode from "../groups/TextSwitchGroupCode";
+import ExtendSwitchGroupCode from "../groups/ExtendSwitchGroupCode";
+import DisabledSwitchGroupCode from "../groups/DisabledSwitchGroupCode";
 import DemoBlock from "../components/DemoBlock";
 import Table from "../components/Table";
 export default {
@@ -108,6 +120,10 @@ export default {
     },
     components: {
         dcSwitch,
+        BasicSwitchGroupCode,
+        TextSwitchGroupCode,
+        ExtendSwitchGroupCode,
+        DisabledSwitchGroupCode,
         DemoBlock,
         Table
     },

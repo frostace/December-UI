@@ -193,12 +193,12 @@ export default {
 .dc-switch {
     &.is-checked {
         .dc-switch-text-active {
-            color: $--primary-color;
+            color: $--key-color;
         }
     }
     &:not(.is-checked) {
         .dc-switch-text-inactive {
-            color: $--primary-color;
+            color: $--key-color;
         }
     }
 }
@@ -244,7 +244,7 @@ span.dc-switch-tooltip {
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px $--primary-color;
+    box-shadow: 0 0 1px $--key-color;
 }
 
 .dc-switch.is-checked .dc-switch-button {
